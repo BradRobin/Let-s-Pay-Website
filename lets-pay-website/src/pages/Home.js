@@ -25,12 +25,11 @@ const Home = () => {
           </div>
           <div className="image-content">
             <div className="logo-display">
-              <div className="logo-text">
-                <span className="logo-blue">Let</span>
-                <span className="logo-apostrophe">'</span>
-                <span className="logo-cyan">sPay</span>
-              </div>
-              <div className="logo-tagline">Integrated Financial Management System</div>
+              <img 
+                src="/letspay-logo.png" 
+                alt="Let'sPay - Integrated Financial Management System" 
+                className="home-logo-image"
+              />
             </div>
           </div>
         </div>

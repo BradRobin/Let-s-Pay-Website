@@ -15,12 +15,11 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="logo-container">
           <div className="logo">
-            <span className="logo-text">
-              <span className="logo-blue">Let</span>
-              <span className="logo-apostrophe">'</span>
-              <span className="logo-cyan">sPay</span>
-            </span>
-            <div className="logo-tagline">Integrated Financial Management System</div>
+            <img 
+              src="/letspay-logo.png" 
+              alt="Let'sPay - Integrated Financial Management System" 
+              className="logo-image"
+            />
           </div>
         </Link>
 
