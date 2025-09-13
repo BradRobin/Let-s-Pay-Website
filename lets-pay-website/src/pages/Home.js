@@ -26,7 +26,7 @@ const Home = () => {
           <div className="image-content">
             <div className="logo-display">
               <img 
-                src="/letspay-logo.png" 
+                src="/letspay-logo-new.png" 
                 alt="Let'sPay - Integrated Financial Management System" 
                 className="home-logo-image"
               />

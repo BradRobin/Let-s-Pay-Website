@@ -4,185 +4,230 @@ import './Clients.css';
 const Clients = () => {
   return (
     <div className="clients">
-      <div className="container">
-        <div className="clients-header">
-          <h1>Our Clients</h1>
-          <p className="clients-subtitle">
-            Trusted by leading organizations worldwide across all continents
-          </p>
-        </div>
-
-        <div className="client-categories">
-          <div className="client-category">
-            <h2>Banking & Financial Institutions</h2>
-            <div className="client-grid">
-              <div className="client-item">
-                <div className="client-logo">🏦</div>
-                <h3>International Banks</h3>
+      {/* First Section - Industries we serve text left, placeholder image right */}
+      <section className="flow-section industries-section">
+        <div className="flow-container">
+          <div className="text-content">
+            <h1 className="section-title">Industries We <span className="highlight-blue">Serve</span></h1>
+            <p className="intro-text">
+              <span className="highlight-cyan">Let'sPay LTD</span> is a high technology company involved in the development, 
+              design, and customization of secure management systems serving the following industries:
+            </p>
+            <div className="industries-grid">
+              <div className="industry-card">
+                <div className="industry-icon">🏦</div>
+                <h3 className="highlight-blue">Banking, Finance, and Insurance Industries</h3>
                 <p>Tier one bank core system implementation across multiple continents</p>
               </div>
-              <div className="client-item">
-                <div className="client-logo">💳</div>
-                <h3>Payment Processors</h3>
-                <p>VISA and Mastercard operations consultation and implementation</p>
+              <div className="industry-card">
+                <div className="industry-icon">🏥</div>
+                <h3 className="highlight-cyan">Medical & Health Solutions</h3>
+                <p>Hospital Management Information Systems and telemedicine platforms</p>
               </div>
-              <div className="client-item">
-                <div className="client-logo">🏛️</div>
-                <h3>Central Banks</h3>
-                <p>National payment infrastructure and digital currency solutions</p>
+              <div className="industry-card">
+                <div className="industry-icon">⚡</div>
+                <h3 className="highlight-red">Energy Systems & Equipment</h3>
+                <p>Smart grid solutions and intelligent power transmission systems</p>
               </div>
-              <div className="client-item">
-                <div className="client-logo">📊</div>
-                <h3>Investment Firms</h3>
-                <p>Secure financial management and trading platform solutions</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="client-category">
-            <h2>Government & Public Sector</h2>
-            <div className="client-grid">
-              <div className="client-item">
-                <div className="client-logo">🏛️</div>
-                <h3>National Governments</h3>
-                <p>E-government solutions and digital transformation initiatives</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏛️</div>
-                <h3>County Governments</h3>
-                <p>Revenue collection and citizen service management systems</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏛️</div>
-                <h3>Government Agencies</h3>
-                <p>Licensing, permits, and regulatory compliance management</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏛️</div>
-                <h3>Public Utilities</h3>
-                <p>Bill payment and service management for public utilities</p>
+              <div className="industry-card">
+                <div className="industry-icon">🌐</div>
+                <h3 className="highlight-blue">ICT Networks, Integration, Design, and Installations</h3>
+                <p>Comprehensive ICT solutions including network design and integration</p>
               </div>
             </div>
           </div>
-
-          <div className="client-category">
-            <h2>Healthcare & Medical</h2>
-            <div className="client-grid">
-              <div className="client-item">
-                <div className="client-logo">🏥</div>
-                <h3>Hospital Networks</h3>
-                <p>Hospital Management Information Systems (HMIS) implementation</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏥</div>
-                <h3>Medical Centers</h3>
-                <p>Unified patient records and telemedicine platform solutions</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏥</div>
-                <h3>Health Ministries</h3>
-                <p>National health information systems and citizen health cards</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏥</div>
-                <h3>Insurance Providers</h3>
-                <p>Health insurance claim processing and management systems</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="client-category">
-            <h2>Enterprise & Corporate</h2>
-            <div className="client-grid">
-              <div className="client-item">
-                <div className="client-logo">🏢</div>
-                <h3>Multinational Corporations</h3>
-                <p>Global payment processing and financial management solutions</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏢</div>
-                <h3>Small & Medium Enterprises</h3>
-                <p>Cost-effective automation and risk management solutions</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏢</div>
-                <h3>Technology Companies</h3>
-                <p>Integration services and custom development solutions</p>
-              </div>
-              <div className="client-item">
-                <div className="client-logo">🏢</div>
-                <h3>Retail & E-commerce</h3>
-                <p>Payment gateway and transaction processing solutions</p>
+          <div className="image-content">
+            <div className="placeholder-image">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">🏢</div>
+                <h3>Multi-Industry</h3>
+                <p>Comprehensive Solutions</p>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="testimonials-section">
-          <h2>Client Testimonials</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Let'sPay has revolutionized our payment processing capabilities. Their secure and reliable platform has significantly improved our operational efficiency."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4>Banking Executive</h4>
-                  <span>International Bank</span>
-                </div>
+      {/* Second Section - Additional industries text right, placeholder image left */}
+      <section className="flow-section additional-industries-section">
+        <div className="flow-container">
+          <div className="image-content">
+            <div className="placeholder-image">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">🔒</div>
+                <h3>Security & Engineering</h3>
+                <p>Advanced Solutions</p>
               </div>
             </div>
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"The HMIS solution provided by Let'sPay has transformed our healthcare delivery. The unified patient records system is exceptional."</p>
+          </div>
+          <div className="text-content">
+            <h2 className="section-title">Specialized <span className="highlight-cyan">Solutions</span></h2>
+            <div className="specialized-industries">
+              <div className="specialized-card">
+                <div className="specialized-icon">🛡️</div>
+                <h3 className="highlight-red">Security Design, Consultancy, Installation, Risk & Threat Analysis</h3>
+                <p>Comprehensive security solutions with advanced threat analysis capabilities</p>
               </div>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4>Hospital Administrator</h4>
-                  <span>Regional Medical Center</span>
-                </div>
+              <div className="specialized-card">
+                <div className="specialized-icon">🖨️</div>
+                <h3 className="highlight-blue">Security Printing</h3>
+                <p>High-security document printing and anti-counterfeiting solutions</p>
               </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Their 24/7 support and technical expertise have been invaluable. Let'sPay truly understands our business requirements."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4>Government Official</h4>
-                  <span>County Government</span>
-                </div>
+              <div className="specialized-card">
+                <div className="specialized-icon">⚙️</div>
+                <h3 className="highlight-cyan">Civil, Mechanical, Electrical, and Electronic Engineering integration systems</h3>
+                <p>Integrated engineering solutions across multiple disciplines</p>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="global-presence">
-          <h2>Global Presence</h2>
-          <div className="presence-stats">
-            <div className="presence-item">
-              <div className="presence-icon">🌍</div>
-              <h3>All Continents</h3>
-              <p>Active presence and successful implementations worldwide</p>
+      {/* Third Section - Client solutions text left, placeholder image right */}
+      <section className="flow-section solutions-section">
+        <div className="flow-container">
+          <div className="text-content">
+            <h2 className="section-title">Client <span className="highlight-red">Solutions</span></h2>
+            <p className="solutions-text">
+              <span className="highlight-blue">IT solutions provider</span> for Financial & Enterprise 
+              verticals. Have comprehensive & emerging technology-based products for the 
+              <span className="highlight-cyan"> Payment, Health & HR domains</span>.
+            </p>
+            <div className="solutions-list">
+              <div className="solution-item">
+                <div className="solution-icon">💻</div>
+                <div className="solution-content">
+                  <h3 className="highlight-blue">Software Solutions</h3>
+                  <p>Software solution to address end-to-end business requirements and meet the needs of customers</p>
+                </div>
+              </div>
+              <div className="solution-item">
+                <div className="solution-icon">🤝</div>
+                <div className="solution-content">
+                  <h3 className="highlight-cyan">Payment Associations</h3>
+                  <p>Consultation on handling payment associations like VISA and Mastercard operations</p>
+                </div>
+              </div>
+              <div className="solution-item">
+                <div className="solution-icon">🔧</div>
+                <div className="solution-content">
+                  <h3 className="highlight-red">Testing & Implementation</h3>
+                  <p>Testing of Payment Delivery Channels like ATM, POS, HMIS, etc.</p>
+                </div>
+              </div>
+              <div className="solution-item">
+                <div className="solution-icon">👥</div>
+                <div className="solution-content">
+                  <h3 className="highlight-blue">Staffing Solutions</h3>
+                  <p>Staffing Solution for offshore & onsite projects</p>
+                </div>
+              </div>
             </div>
-            <div className="presence-item">
-              <div className="presence-icon">🏢</div>
-              <h3>1000+ Projects</h3>
-              <p>Successfully delivered projects across various industries</p>
-            </div>
-            <div className="presence-item">
-              <div className="presence-icon">🤝</div>
-              <h3>Long-term Partnerships</h3>
-              <p>Established relationships with clients spanning over a decade</p>
-            </div>
-            <div className="presence-item">
-              <div className="presence-icon">⭐</div>
-              <h3>99.9% Satisfaction</h3>
-              <p>Client satisfaction rate with our solutions and services</p>
+          </div>
+          <div className="image-content">
+            <div className="placeholder-image">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">🚀</div>
+                <h3>Innovation</h3>
+                <p>Cutting-edge Technology</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Fourth Section - Global presence text right, placeholder image left */}
+      <section className="flow-section global-section">
+        <div className="flow-container">
+          <div className="image-content">
+            <div className="placeholder-image">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Worldwide Presence</p>
+              </div>
+            </div>
+          </div>
+          <div className="text-content">
+            <h2 className="section-title">Global <span className="highlight-cyan">Presence</span></h2>
+            <div className="global-stats">
+              <div className="global-stat">
+                <span className="stat-number highlight-red">1000+</span>
+                <span className="stat-label">Man Years of Experience</span>
+              </div>
+              <div className="global-stat">
+                <span className="stat-number highlight-blue">Global</span>
+                <span className="stat-label">Continental Coverage</span>
+              </div>
+            </div>
+            <p className="global-text">
+              Have nearly <span className="highlight-red">1000 Man Years</span> of experience across 
+              payment and enterprise domains. A pool of human minds with deep-rooted knowledge across 
+              multiple industry verticals. Work with you end-to-end. Stay till the end to ensure you 
+              get the objectives fulfilled.
+            </p>
+            <div className="global-features">
+              <div className="global-feature">Hands-on approach</div>
+              <div className="global-feature">Secure Robust Platform</div>
+              <div className="global-feature">System used internationally by leading banks, governments, and corporates</div>
+              <div className="global-feature">Mobile App for both Android & iOS</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fifth Section - Client testimonials text left, placeholder image right */}
+      <section className="flow-section testimonials-section">
+        <div className="flow-container">
+          <div className="text-content">
+            <h2 className="section-title">Client <span className="highlight-red">Testimonials</span></h2>
+            <div className="testimonials-grid">
+              <div className="testimonial-card">
+                <div className="testimonial-content">
+                  <p>"Let'sPay has revolutionized our payment processing capabilities. Their secure and reliable platform has significantly improved our operational efficiency."</p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="highlight-blue">Banking Executive</h4>
+                    <span>International Bank</span>
+                  </div>
+                </div>
+              </div>
+              <div className="testimonial-card">
+                <div className="testimonial-content">
+                  <p>"The HMIS solution provided by Let'sPay has transformed our healthcare delivery. The unified patient records system is exceptional."</p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="highlight-cyan">Hospital Administrator</h4>
+                    <span>Regional Medical Center</span>
+                  </div>
+                </div>
+              </div>
+              <div className="testimonial-card">
+                <div className="testimonial-content">
+                  <p>"Their 24/7 support and technical expertise have been invaluable. Let'sPay truly understands our business requirements."</p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="highlight-red">Government Official</h4>
+                    <span>County Government</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="image-content">
+            <div className="placeholder-image">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">⭐</div>
+                <h3>Client Satisfaction</h3>
+                <p>99.9% Success Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

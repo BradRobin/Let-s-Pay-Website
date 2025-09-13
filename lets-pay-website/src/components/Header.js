@@ -11,53 +11,56 @@ const Header = () => {
 
   return (
     <header className="header">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <div className="header-container">
         {/* Logo */}
         <Link to="/" className="logo-container">
           <div className="logo">
             <img 
-              src="/letspay-logo.png" 
+              src="/letspay-logo-new.png" 
               alt="Let'sPay - Integrated Financial Management System" 
               className="logo-image"
+              role="img"
+              aria-label="Let'sPay company logo"
             />
           </div>
         </Link>
 
         {/* Navigation */}
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <ul className="nav-list">
-            <li className="nav-item">
-              <Link to="/" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)}>
+        <nav id="main-navigation" className={`nav ${isMenuOpen ? 'nav-open' : ''}`} role="navigation" aria-label="Main navigation">
+          <ul className="nav-list" role="menubar">
+            <li className="nav-item" role="none">
+              <Link to="/" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link cyan-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/about" className="nav-link cyan-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 About
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/services" className="nav-link red-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/services" className="nav-link red-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Services
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/why-us" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/why-us" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Why Us
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/experience" className="nav-link cyan-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/experience" className="nav-link cyan-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Experience
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/clients" className="nav-link red-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/clients" className="nav-link red-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Clients
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/contact" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)}>
+            <li className="nav-item" role="none">
+              <Link to="/contact" className="nav-link blue-link" onClick={() => setIsMenuOpen(false)} role="menuitem">
                 Contact
               </Link>
             </li>
@@ -65,10 +68,16 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`}></span>
-          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`}></span>
-          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`}></span>
+        <button 
+          className="menu-toggle" 
+          onClick={toggleMenu} 
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="main-navigation"
+        >
+          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`} aria-hidden="true"></span>
+          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`} aria-hidden="true"></span>
+          <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`} aria-hidden="true"></span>
         </button>
       </div>
     </header>

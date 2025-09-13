@@ -1,194 +1,341 @@
-/* About Page Styles */
+/* About Page - Flowing Layout Styles */
 .about {
-  padding-top: 100px;
-  min-height: 100vh;
+  padding-top: 80px; /* Account for fixed header */
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
-.about-header {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 0 20px;
+/* Flow Section Base Styles */
+.flow-section {
+  padding: 80px 0;
+  position: relative;
 }
 
-.about-header h1 {
-  font-size: 3rem;
+.flow-section:nth-child(odd) {
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(0, 206, 209, 0.05));
+}
+
+.flow-section:nth-child(even) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.9));
+}
+
+.flow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 500px;
+}
+
+/* Text Content Styles */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
-.about-subtitle {
-  font-size: 1.3rem;
+/* Color Highlights using Logo Color Scheme */
+.highlight-blue {
+  color: #1E90FF;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+.highlight-cyan {
+  color: #00CED1;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 206, 209, 0.3);
+}
+
+.highlight-red {
+  color: #FF0000;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.intro-text,
+.focus-text,
+.experience-text,
+.healthcare-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.trademark-text {
+  font-size: 1rem;
+  color: #1E90FF;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(30, 144, 255, 0.1);
+  border-left: 4px solid #1E90FF;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Image Content Styles */
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Placeholder Images */
+.placeholder-image {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(0, 206, 209, 0.1));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.placeholder-image:hover {
+  transform: translateY(-5px);
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #333;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.placeholder-content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1E90FF;
+}
+
+.placeholder-content p {
+  font-size: 1.1rem;
   color: #666;
   font-style: italic;
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  margin-bottom: 80px;
-  padding: 0 20px;
-}
-
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-}
-
-.about-text p {
-  margin-bottom: 25px;
-}
-
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* Experience Stats */
+.experience-stats {
+  display: flex;
   gap: 30px;
+  margin-bottom: 30px;
 }
 
 .stat-item {
   text-align: center;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(0, 206, 209, 0.1));
+  padding: 20px;
+  background: rgba(30, 144, 255, 0.1);
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(30, 144, 255, 0.2);
+  flex: 1;
 }
 
-.stat-item:hover {
-  transform: translateY(-5px);
-}
-
-.stat-item h3 {
+.stat-number {
+  display: block;
   font-size: 2.5rem;
-  color: #1E90FF;
-  margin-bottom: 10px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.stat-item p {
+.stat-label {
+  font-size: 0.9rem;
   color: #666;
   font-weight: 500;
+  line-height: 1.4;
 }
 
-.strengths-section {
-  background: #f8f9fa;
-  padding: 80px 0;
-  margin: 0 -20px;
+/* Focus Features */
+.focus-features {
+  margin-bottom: 30px;
 }
 
-.strengths-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  color: #333;
-  position: relative;
-}
-
-.strengths-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
-  border-radius: 2px;
-}
-
-.strengths-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.strength-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.feature-item {
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  background: rgba(30, 144, 255, 0.05);
+  border-left: 4px solid #1E90FF;
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+  color: #555;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item:hover {
+  background: rgba(30, 144, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* Infrastructure Highlight */
+.infrastructure-highlight {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.05));
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 0, 0, 0.2);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.infrastructure-highlight h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Healthcare Poem */
+.healthcare-poem {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px 0;
+  border-left: 4px solid #FF0000;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.poem-line {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Strengths List */
+.strengths-list {
+  margin-bottom: 30px;
+}
+
+.strength-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
-.strength-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.strength-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.strength-card h3 {
-  font-size: 1.5rem;
-  color: #1E90FF;
-  margin-bottom: 20px;
+.strength-item h3 {
+  font-size: 1.3rem;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 
-.strength-card p {
+.strength-item p {
   color: #666;
   line-height: 1.6;
   font-size: 1rem;
+  margin: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .about-content {
+  .flow-container {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding: 0 20px;
   }
   
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .placeholder-image {
+    height: 300px;
+  }
+  
+  .experience-stats {
+    flex-direction: column;
     gap: 20px;
   }
   
-  .strengths-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .intro-text,
+  .focus-text,
+  .experience-text,
+  .healthcare-text {
+    font-size: 1rem;
   }
   
-  .about-header h1 {
-    font-size: 2.5rem;
+  .healthcare-poem {
+    padding: 20px;
   }
   
-  .strengths-section h2 {
-    font-size: 2rem;
+  .strength-item {
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .about {
-    padding-top: 80px;
+    padding-top: 70px;
   }
   
-  .about-header h1 {
-    font-size: 2rem;
-  }
-  
-  .about-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .about-stats {
-    grid-template-columns: 1fr;
-  }
-  
-  .stat-item h3 {
-    font-size: 2rem;
-  }
-  
-  .strengths-section {
+  .flow-section {
     padding: 60px 0;
+  }
+  
+  .flow-container {
+    padding: 0 15px;
+    gap: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .placeholder-image {
+    height: 250px;
+  }
+  
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+  
+  .placeholder-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .healthcare-poem {
+    padding: 15px;
+  }
+  
+  .poem-line {
+    font-size: 1rem;
   }
 }
