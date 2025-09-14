@@ -27,12 +27,14 @@ const About = () => {
             </p>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">🏢</div>
-                <h3>International Company</h3>
-                <p>Founded 2009</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/let's pay overview.png" 
+                alt="Let'sPay International Company Overview" 
+                className="section-image"
+              />
+              <h3>International Company</h3>
+              <p>Founded 2009</p>
             </div>
           </div>
         </div>
@@ -42,12 +44,14 @@ const About = () => {
       <section className="flow-section focus-section">
         <div className="flow-container">
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">🎯</div>
-                <h3>Company Focus</h3>
-                <p>Strategic Vision</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/solutions for healthcare.png" 
+                alt="Let'sPay Company Focus and Solutions" 
+                className="section-image"
+              />
+              <h3>Company Focus</h3>
+              <p>Strategic Vision</p>
             </div>
           </div>
           <div className="text-content">
@@ -100,12 +104,14 @@ const About = () => {
             </div>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">💼</div>
-                <h3>Professional Expertise</h3>
-                <p>1000+ Man Years</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/Team.png" 
+                alt="Let'sPay Professional Team" 
+                className="section-image"
+              />
+              <h3>Professional Team</h3>
+              <p>1000+ Man Years</p>
             </div>
           </div>
         </div>
@@ -115,12 +121,14 @@ const About = () => {
       <section className="flow-section healthcare-section">
         <div className="flow-container">
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">🏥</div>
-                <h3>Healthcare Vision</h3>
-                <p>Telemedicine Solutions</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/smart telemedicine devices.png" 
+                alt="Let'sPay Healthcare Vision and Telemedicine" 
+                className="section-image"
+              />
+              <h3>Healthcare Vision</h3>
+              <p>Telemedicine Solutions</p>
             </div>
           </div>
           <div className="text-content">
@@ -168,12 +176,14 @@ const About = () => {
             </div>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">💪</div>
-                <h3>Our Strengths</h3>
-                <p>Excellence & Quality</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/Happy customers.png" 
+                alt="Let'sPay Company Strengths and Excellence" 
+                className="section-image"
+              />
+              <h3>Our Strengths</h3>
+              <p>Excellence & Quality</p>
             </div>
           </div>
         </div>

@@ -4,134 +4,191 @@ import './Services.css';
 const Services = () => {
   return (
     <div className="services">
-      <div className="container">
-        <div className="services-header">
-          <h1>Our Services</h1>
-          <p className="services-subtitle">
-            Comprehensive solutions for financial management and enterprise needs
-          </p>
+      {/* First Section - Payment Solutions text left, image right */}
+      <section className="flow-section payment-solutions-section">
+        <div className="flow-container">
+          <div className="text-content">
+            <h1 className="section-title">Payment <span className="highlight-blue">Solutions</span></h1>
+            <p className="intro-text">
+              <span className="highlight-cyan">Let'sPay</span> provides comprehensive payment solutions 
+              including mobile payments, card processing, and digital wallets. Our platform supports 
+              multiple payment methods including Cash, Debit, Credit Cards, Mobile Wallets, and direct 
+              bank deposits.
+            </p>
+            <div className="service-features">
+              <div className="feature-card">
+                <div className="feature-icon">💳</div>
+                <h3 className="highlight-blue">Card Processing</h3>
+                <p>Secure credit and debit card processing with real-time validation</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📱</div>
+                <h3 className="highlight-cyan">Mobile Payments</h3>
+                <p>Mobile wallet integration and USSD payment solutions</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🏦</div>
+                <h3 className="highlight-red">Bank Integration</h3>
+                <p>Direct bank deposit and real-time payment processing</p>
+              </div>
+            </div>
+          </div>
+          <div className="image-content">
+            <div className="image-display">
+              <img 
+                src="/images/Holistic Payment Architecture.png" 
+                alt="Let'sPay Holistic Payment Architecture" 
+                className="section-image"
+              />
+              <h3>Payment Architecture</h3>
+              <p>Comprehensive Payment Solutions</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="services-grid">
-          <div className="service-category">
-            <h2>Payment Solutions</h2>
-            <div className="service-items">
-              <div className="service-item">
-                <h3>Mobile Payments</h3>
-                <p>Secure mobile wallet, mPOS, and mobile banking solutions</p>
-              </div>
-              <div className="service-item">
-                <h3>Cross-border Transfers</h3>
-                <p>Multi-model card, internet/mobile cross-border money transfers</p>
-              </div>
-              <div className="service-item">
-                <h3>Digital Wallets</h3>
-                <p>P2P, P2G, G2G, and B2G mobile payment solutions</p>
-              </div>
-              <div className="service-item">
-                <h3>Internet Banking</h3>
-                <p>SMS Banking, Pay Switch, Pre-payment, Gift, Wallets, Tokens</p>
-              </div>
+      {/* Second Section - Healthcare Solutions text right, image left */}
+      <section className="flow-section healthcare-solutions-section">
+        <div className="flow-container">
+          <div className="image-content">
+            <div className="image-display">
+              <img 
+                src="/images/Health care solutions.png" 
+                alt="Let'sPay Healthcare Solutions" 
+                className="section-image"
+              />
+              <h3>Healthcare Solutions</h3>
+              <p>Comprehensive Medical Systems</p>
             </div>
           </div>
-
-          <div className="service-category">
-            <h2>Government Solutions</h2>
-            <div className="service-items">
-              <div className="service-item">
-                <h3>Revenue Collection</h3>
-                <p>County revenue instruments for tax collection and management</p>
+          <div className="text-content">
+            <h2 className="section-title">Healthcare <span className="highlight-cyan">Solutions</span></h2>
+            <p className="healthcare-text">
+              Our <span className="highlight-blue">Hospital Management Information Systems (HMIS)</span> 
+              provide comprehensive healthcare solutions including patient management, medical records, 
+              billing, and telemedicine capabilities.
+            </p>
+            <div className="healthcare-modules">
+              <div className="module-item">
+                <div className="module-icon">🏥</div>
+                <div className="module-content">
+                  <h4 className="highlight-blue">Outpatient Management</h4>
+                  <p>Complete outpatient care management system</p>
+                </div>
               </div>
-              <div className="service-item">
-                <h3>G2C App</h3>
-                <p>One App for all government interactions and transactions</p>
+              <div className="module-item">
+                <div className="module-icon">🛏️</div>
+                <div className="module-content">
+                  <h4 className="highlight-cyan">Inpatient Care</h4>
+                  <p>Comprehensive inpatient management and monitoring</p>
+                </div>
               </div>
-              <div className="service-item">
-                <h3>Licenses & Permits</h3>
-                <p>Real-time off-site payment of licenses with QR code receipts</p>
-              </div>
-              <div className="service-item">
-                <h3>Property Management</h3>
-                <p>Land rates, building plans, and property management systems</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="service-category">
-            <h2>Enterprise Solutions</h2>
-            <div className="service-items">
-              <div className="service-item">
-                <h3>ERP System</h3>
-                <p>Integrated Financial Management with multiple modules</p>
-              </div>
-              <div className="service-item">
-                <h3>Human Resources</h3>
-                <p>Complete HR management and employee services</p>
-              </div>
-              <div className="service-item">
-                <h3>Document Management</h3>
-                <p>Electronic Document Management System (E-DMS)</p>
-              </div>
-              <div className="service-item">
-                <h3>Business Intelligence</h3>
-                <p>AI-powered analytics and reporting systems</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="service-category">
-            <h2>Healthcare Solutions</h2>
-            <div className="service-items">
-              <div className="service-item">
-                <h3>HMIS</h3>
-                <p>Hospital Management Information Systems</p>
-              </div>
-              <div className="service-item">
-                <h3>One Citizen, One Card</h3>
-                <p>Unified medical records across all hospitals</p>
-              </div>
-              <div className="service-item">
-                <h3>Telemedicine</h3>
-                <p>Remote healthcare access and consultation services</p>
-              </div>
-              <div className="service-item">
-                <h3>Case Management</h3>
-                <p>Comprehensive patient case tracking and management</p>
+              <div className="module-item">
+                <div className="module-icon">💊</div>
+                <div className="module-content">
+                  <h4 className="highlight-red">Pharmacy Management</h4>
+                  <p>Complete pharmacy inventory and dispensing system</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="technology-section">
-          <h2>Technology Features</h2>
-          <div className="tech-features">
-            <div className="tech-feature">
-              <span className="tech-icon">🔐</span>
-              <span>Bank-grade Security</span>
+      {/* Third Section - Technology Services text left, image right */}
+      <section className="flow-section technology-services-section">
+        <div className="flow-container">
+          <div className="text-content">
+            <h2 className="section-title">Technology <span className="highlight-red">Services</span></h2>
+            <p className="technology-text">
+              We provide comprehensive technology services including <span className="highlight-blue">web development</span>, 
+              <span className="highlight-cyan">mobile app development</span>, <span className="highlight-red">business integration</span>, 
+              and <span className="highlight-blue">consulting services</span>.
+            </p>
+            <div className="tech-services-grid">
+              <div className="tech-service-card">
+                <div className="tech-icon">🌐</div>
+                <h3 className="highlight-blue">Web Development</h3>
+                <p>Custom web applications and platforms</p>
+              </div>
+              <div className="tech-service-card">
+                <div className="tech-icon">📱</div>
+                <h3 className="highlight-cyan">Mobile Development</h3>
+                <p>iOS and Android mobile applications</p>
+              </div>
+              <div className="tech-service-card">
+                <div className="tech-icon">🔗</div>
+                <h3 className="highlight-red">System Integration</h3>
+                <p>Business and systems integration solutions</p>
+              </div>
+              <div className="tech-service-card">
+                <div className="tech-icon">💼</div>
+                <h3 className="highlight-blue">Consulting</h3>
+                <p>Specialized consulting and advisory services</p>
+              </div>
             </div>
-            <div className="tech-feature">
-              <span className="tech-icon">⚡</span>
-              <span>Real-time Processing</span>
-            </div>
-            <div className="tech-feature">
-              <span className="tech-icon">📱</span>
-              <span>Mobile Apps (iOS & Android)</span>
-            </div>
-            <div className="tech-feature">
-              <span className="tech-icon">🌐</span>
-              <span>GPS Tagged Payments</span>
-            </div>
-            <div className="tech-feature">
-              <span className="tech-icon">🤖</span>
-              <span>AI & Business Intelligence</span>
-            </div>
-            <div className="tech-feature">
-              <span className="tech-icon">☁️</span>
-              <span>Cloud Storage Solutions</span>
+          </div>
+          <div className="image-content">
+            <div className="image-display">
+              <img 
+                src="/images/Web app development.png" 
+                alt="Let'sPay Technology Services" 
+                className="section-image"
+              />
+              <h3>Technology Services</h3>
+              <p>Comprehensive IT Solutions</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Fourth Section - AI & Business Intelligence text right, image left */}
+      <section className="flow-section ai-services-section">
+        <div className="flow-container">
+          <div className="image-content">
+            <div className="image-display">
+              <img 
+                src="/images/solution.png" 
+                alt="Let'sPay AI and Business Intelligence" 
+                className="section-image"
+              />
+              <h3>AI & Business Intelligence</h3>
+              <p>Advanced Analytics Solutions</p>
+            </div>
+          </div>
+          <div className="text-content">
+            <h2 className="section-title">AI & Business <span className="highlight-blue">Intelligence</span></h2>
+            <p className="ai-text">
+              Our systems include <span className="highlight-cyan">Business Intelligence & AI</span> 
+              capabilities for predictive analytics, risk assessment, and automated decision making. 
+              We leverage artificial intelligence to enhance security and improve operational efficiency.
+            </p>
+            <div className="ai-features">
+              <div className="ai-feature">
+                <div className="ai-icon">🤖</div>
+                <div className="ai-content">
+                  <h4 className="highlight-red">Predictive Analytics</h4>
+                  <p>AI-powered predictive modeling for business insights</p>
+                </div>
+              </div>
+              <div className="ai-feature">
+                <div className="ai-icon">🔒</div>
+                <div className="ai-content">
+                  <h4 className="highlight-blue">Security Intelligence</h4>
+                  <p>AI-driven security monitoring and threat detection</p>
+                </div>
+              </div>
+              <div className="ai-feature">
+                <div className="ai-icon">📊</div>
+                <div className="ai-content">
+                  <h4 className="highlight-cyan">Real-time Reports</h4>
+                  <p>Automated reporting and business intelligence dashboards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

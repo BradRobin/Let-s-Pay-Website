@@ -39,12 +39,14 @@ const Home = () => {
       <section className="flow-section platform-section">
         <div className="flow-container">
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">🌐</div>
-                <h3>Global Platform</h3>
-                <p>Secure & Reliable</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/let's pay overview.png" 
+                alt="Let'sPay Holistic Platform Overview" 
+                className="section-image"
+              />
+              <h3>Holistic Platform</h3>
+              <p>Web & Mobility-Based Solution</p>
             </div>
           </div>
           <div className="text-content">
@@ -91,12 +93,14 @@ const Home = () => {
             </p>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">💼</div>
-                <h3>Professional Expertise</h3>
-                <p>1000+ Man Years</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/Team.png" 
+                alt="Let'sPay Professional Team" 
+                className="section-image"
+              />
+              <h3>Professional Team</h3>
+              <p>1000+ Man Years Experience</p>
             </div>
           </div>
         </div>
@@ -106,12 +110,14 @@ const Home = () => {
       <section className="flow-section technology-section">
         <div className="flow-container">
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">⚡</div>
-                <h3>Real-Time Technology</h3>
-                <p>AI & Business Intelligence</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/solution.png" 
+                alt="Let'sPay Technology Solutions" 
+                className="section-image"
+              />
+              <h3>Technology Solutions</h3>
+              <p>AI & Business Intelligence</p>
             </div>
           </div>
           <div className="text-content">
@@ -148,12 +154,14 @@ const Home = () => {
             </div>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">🏢</div>
-                <h3>Multi-Industry</h3>
-                <p>Comprehensive Solutions</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/Integrated platform.png" 
+                alt="Let'sPay Integrated Platform" 
+                className="section-image"
+              />
+              <h3>Integrated Platform</h3>
+              <p>Multi-Industry Solutions</p>
             </div>
           </div>
         </div>
@@ -163,12 +171,14 @@ const Home = () => {
       <section className="flow-section contact-section">
         <div className="flow-container">
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">📞</div>
-                <h3>24/7 Support</h3>
-                <p>Always Available</p>
-              </div>
+            <div className="image-display">
+              <img 
+                src="/images/Happy customers.png" 
+                alt="Let'sPay Happy Customers" 
+                className="section-image"
+              />
+              <h3>Happy Customers</h3>
+              <p>24/7 Support Available</p>
             </div>
           </div>
           <div className="text-content">
