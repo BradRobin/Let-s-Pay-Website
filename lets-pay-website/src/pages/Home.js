@@ -102,25 +102,22 @@ const Home = () => {
         <div className="hero-waves"></div>
         <div className="hero-container">
           <div className="hero-content">
+            <div className="hero-logo">
+              <img 
+                src="/images/letspay_logo-removebg-preview.png?v=2" 
+                alt="Let'spay Official Transparent Logo" 
+                className="home-logo-image"
+              />
+              <p className="hero-tagline">Bringing your future today.</p>
+            </div>
             <h1 className="hero-title">
-              <span className="hero-line-1">Secure Payments.</span>
-              <span className="hero-line-2"><span className="hero-global-word">Global</span> Reach.</span>
-              <span className="hero-line-3">Mobile First.</span>
+              <span className="hero-line-1">Secure financial gateways.</span>
+              <span className="hero-line-2"><span className="hero-world-class">World-class</span> technology.</span>
+              <span className="hero-line-3">Mobile apps - Multiple devices.</span>
             </h1>
             <p className="hero-description">
-              Powering transactions across continents with Tier One banking infrastructure and next-gen mobile technology.
+              Powering transactions across continents with Tier 1 bank co. secure technology and next-gen mobile technology.
             </p>
-          </div>
-          <div className="hero-bottom">
-            <div className="hero-visual">
-              <div className="logo-display">
-                <img 
-                  src="/images/letspay_logo-removebg-preview.png?v=2" 
-                  alt="Let'spay Official Transparent Logo" 
-                  className="home-logo-image"
-                />
-              </div>
-            </div>
             <div className="hero-cta">
               <Link to="/about" className="cta-button cta-explore" aria-label="Explore">
                 <span className="cta-text">Explore</span>
@@ -149,7 +146,7 @@ const Home = () => {
                   />
                 )}
               </div>
-              <h3>Secure. Seamless. Convenient.</h3>
+                          <h2>Secure. Seamless Technology.</h2>
               <button className="info-toggle-btn" onClick={togglePopup}>
                 <span className="toggle-text">Learn More</span>
                 <span className="toggle-icon">▼</span>
@@ -237,7 +234,7 @@ const Home = () => {
                   <p>Instant transaction processing and reporting</p>
                 </div>
                 <div className="feature-item">
-                  <h4>Scalable Infrastructure</h4>
+                  <h4>Scalable Solutions</h4>
                   <p>Built to grow with your business needs</p>
         </div>
               </div>
@@ -381,8 +378,8 @@ const Home = () => {
               </p>
               <div className="industry-grid">
                 <div className="industry-item">
-                  <h4>Healthcare</h4>
-                  <p>Patient management and billing systems</p>
+                  <h4>Health Management Solution</h4>
+                  <p>End to end management and billing system</p>
                 </div>
                 <div className="industry-item">
                   <h4>Government</h4>
@@ -390,7 +387,7 @@ const Home = () => {
                 </div>
                 <div className="industry-item">
                   <h4>Retail</h4>
-                  <p>Point of sale and inventory management</p>
+                  <p>Secure Management Platform</p>
                 </div>
                 <div className="industry-item">
                   <h4>Manufacturing</h4>
