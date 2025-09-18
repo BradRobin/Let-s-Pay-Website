@@ -40,7 +40,7 @@
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 30px;
   line-height: 1.2;
   font-family: 'Arial', 'Helvetica', sans-serif;
@@ -48,19 +48,19 @@
 
 /* Color Highlights using Logo Color Scheme */
 .highlight-blue {
-  color: #1E90FF;
+  color: var(--accent-blue);
   font-weight: 600;
   text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
 }
 
 .highlight-cyan {
-  color: #00CED1;
+  color: var(--accent-cyan);
   font-weight: 600;
   text-shadow: 0 0 5px rgba(0, 206, 209, 0.3);
 }
 
 .highlight-red {
-  color: #FF0000;
+  color: var(--accent-red);
   font-weight: 600;
   text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
@@ -71,14 +71,14 @@
 .healthcare-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
+  color: var(--text-secondary);
   margin-bottom: 20px;
   font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .trademark-text {
   font-size: 1rem;
-  color: #1E90FF;
+  color: var(--accent-blue);
   font-weight: 600;
   font-style: italic;
   margin-top: 20px;
@@ -122,18 +122,27 @@
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: var(--bg-secondary);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .section-image {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .image-display h3 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #1E90FF;
+  color: var(--accent-blue);
 }
 
 .image-display p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -159,7 +168,7 @@
 
 .placeholder-content {
   text-align: center;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .placeholder-icon {
@@ -172,12 +181,12 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #1E90FF;
+  color: var(--accent-blue);
 }
 
 .placeholder-content p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -206,7 +215,7 @@
 
 .stat-label {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-muted);
   font-weight: 500;
   line-height: 1.4;
 }
@@ -223,7 +232,7 @@
   border-left: 4px solid #1E90FF;
   border-radius: 0 8px 8px 0;
   font-size: 1rem;
-  color: #555;
+  color: var(--text-secondary);
   transition: all 0.3s ease;
 }
 
@@ -263,7 +272,7 @@
 .poem-line {
   margin: 8px 0;
   font-size: 1.1rem;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 /* Strengths List */
@@ -295,10 +304,52 @@
 }
 
 .strength-item p {
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   font-size: 1rem;
   margin: 0;
+}
+
+/* Brand Name Styling - Emphasized */
+.brand-name {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  transform: scale(1.1);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.brand-let {
+  color: #1E3A8A; /* Dark blue for "Let" (L, e, t) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-apostrophe {
+  color: #FCD34D; /* Yellow for apostrophe */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+}
+
+.brand-s {
+  color: #1E3A8A; /* Dark blue for "s" */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-pay {
+  color: #60A5FA; /* Light blue for "pay" (p, a, y) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */

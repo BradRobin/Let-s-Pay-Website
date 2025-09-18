@@ -10,7 +10,7 @@ const Clients = () => {
           <div className="text-content">
             <h1 className="section-title">Industries We <span className="highlight-blue">Serve</span></h1>
             <p className="intro-text">
-              <span className="highlight-cyan">Let'sPay LTD</span> is a high technology company involved in the development, 
+              <span className="highlight-cyan"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> LTD</span> is a high technology company involved in the development, 
               design, and customization of secure management systems serving the following industries:
             </p>
             <div className="industries-grid">
@@ -184,7 +184,7 @@ const Clients = () => {
             <div className="testimonials-grid">
               <div className="testimonial-card">
                 <div className="testimonial-content">
-                  <p>"Let'sPay has revolutionized our payment processing capabilities. Their secure and reliable platform has significantly improved our operational efficiency."</p>
+                  <p>"<span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> has revolutionized our payment processing capabilities. Their secure and reliable platform has significantly improved our operational efficiency."</p>
                 </div>
                 <div className="testimonial-author">
                   <div className="author-info">
@@ -195,7 +195,7 @@ const Clients = () => {
               </div>
               <div className="testimonial-card">
                 <div className="testimonial-content">
-                  <p>"The HMIS solution provided by Let'sPay has transformed our healthcare delivery. The unified patient records system is exceptional."</p>
+                  <p>"The HMIS solution provided by <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> has transformed our healthcare delivery. The unified patient records system is exceptional."</p>
                 </div>
                 <div className="testimonial-author">
                   <div className="author-info">
@@ -206,7 +206,7 @@ const Clients = () => {
               </div>
               <div className="testimonial-card">
                 <div className="testimonial-content">
-                  <p>"Their 24/7 support and technical expertise have been invaluable. Let'sPay truly understands our business requirements."</p>
+                  <p>"Their 24/7 support and technical expertise have been invaluable. <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> truly understands our business requirements."</p>
                 </div>
                 <div className="testimonial-author">
                   <div className="author-info">

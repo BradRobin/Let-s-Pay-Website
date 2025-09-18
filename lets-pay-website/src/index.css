@@ -1,16 +1,49 @@
+/* Scroll reveal base (use !important to avoid being overridden) */
+.reveal { opacity: 0 !important; transform: translateY(20px) !important; transition: opacity 600ms ease, transform 600ms ease !important; }
+.reveal.in-view { opacity: 1 !important; transform: translateY(0) !important; }
+.reveal-left { opacity: 0 !important; transform: translateX(-24px) !important; }
+.reveal-right { opacity: 0 !important; transform: translateX(24px) !important; }
+.reveal-left.in-view, .reveal-right.in-view { transform: translateX(0) !important; opacity: 1 !important; }
 /* Enhanced Global Styles with Accessibility and Modern Design */
+
+/* CSS Variables for Theme Support */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-muted: #888;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-blue: #1E90FF;
+  --accent-cyan: #87CEEB;
+  --accent-red: #0a2a6c;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-muted: #888;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-blue: #1E90FF;
+  --accent-cyan: #87CEEB;
+  --accent-red: #0a2a6c;
+}
+
 body {
   margin: 0;
-  font-family: 'Arial', 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #333;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: var(--text-primary);
+  background: #ffffff !important;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Enhanced code styling */
@@ -71,7 +104,7 @@ a {
 }
 
 a:hover {
-  color: #00CED1;
+  color: #87CEEB;
   text-decoration: underline;
 }
 
@@ -86,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
-  color: #333;
+  color: #0a2a6c;
 }
 
 h1 {
@@ -148,7 +181,7 @@ th, td {
 }
 
 th {
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
+  background: linear-gradient(45deg, #1E90FF, #87CEEB);
   color: white;
   font-weight: 600;
 }
@@ -194,7 +227,7 @@ button {
 }
 
 button:hover {
-  background: #00CED1;
+  background: #87CEEB;
   transform: translateY(-1px);
 }
 
@@ -231,7 +264,7 @@ blockquote {
 hr {
   border: none;
   height: 2px;
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
+  background: linear-gradient(45deg, #1E90FF, #87CEEB);
   margin: 2rem 0;
   border-radius: 1px;
 }
@@ -239,12 +272,12 @@ hr {
 /* Enhanced selection styles */
 ::selection {
   background: rgba(30, 144, 255, 0.3);
-  color: #333;
+  color: #0a2a6c;
 }
 
 ::-moz-selection {
   background: rgba(30, 144, 255, 0.3);
-  color: #333;
+  color: #0a2a6c;
 }
 
 /* Enhanced scrollbar styles */
@@ -258,12 +291,12 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
+  background: linear-gradient(45deg, #1E90FF, #87CEEB);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #00CED1, #1E90FF);
+  background: linear-gradient(45deg, #87CEEB, #1E90FF);
 }
 
 /* Reduced motion preferences */
@@ -283,7 +316,7 @@ hr {
 @media (prefers-contrast: high) {
   body {
     background: white;
-    color: black;
+    color: #0a2a6c;
   }
   
   a {
@@ -311,8 +344,8 @@ hr {
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #e0e0e0;
+    background: #ffffff !important;
+    color: #0a2a6c;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -378,11 +411,11 @@ hr {
 @media print {
   body {
     background: white;
-    color: black;
+    color: #0a2a6c;
   }
   
   a {
-    color: black;
+    color: #0a2a6c;
     text-decoration: underline;
   }
   

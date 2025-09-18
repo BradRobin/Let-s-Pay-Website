@@ -1,7 +1,7 @@
 /* Footer Styles */
 .footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #e0e0e0;
+  background: #003366 !important;
+  color: var(--text-secondary);
   padding: 60px 0 0;
   margin-top: 80px;
   position: relative;
@@ -26,6 +26,7 @@
   padding: 0 40px;
   position: relative;
   z-index: 1;
+  background: #003366 !important;
 }
 
 .footer-section {
@@ -36,7 +37,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 25px;
-  color: #1E90FF;
+  color: var(--accent-blue);
   text-align: center;
 }
 
@@ -67,7 +68,7 @@
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 30px;
-  color: #b0b0b0;
+  color: var(--text-muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -91,7 +92,7 @@
 }
 
 .contact-info strong {
-  color: #1E90FF;
+  color: var(--accent-blue);
   font-weight: 600;
 }
 
@@ -105,24 +106,25 @@
 }
 
 .logo-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent !important;
+  padding: 0;
+  border-radius: 0;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none !important;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100px;
+  min-height: auto;
   width: 100%;
+  box-shadow: none !important;
 }
 
 .logo-item:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .partner-logo,
@@ -132,13 +134,17 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0.9) contrast(1.1);
-  transition: all 0.3s ease;
+  filter: none;
+  transition: transform 0.3s ease;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
 .partner-logo:hover,
 .client-logo:hover {
-  filter: brightness(1.1) contrast(1.2);
   transform: scale(1.05);
 }
 
@@ -162,7 +168,7 @@
 }
 
 .footer-link {
-  color: #b0b0b0;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -178,12 +184,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, #1E90FF, #00CED1);
+  background: linear-gradient(45deg, #1E90FF, #87CEEB);
   transition: width 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #1E90FF;
+  color: var(--accent-blue);
   transform: translateY(-2px);
 }
 
@@ -193,10 +199,63 @@
 
 /* Footer Bottom */
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.3);
+  background: #003366 !important;
   padding: 25px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 40px;
+}
+
+/* Force all footer divs to have dark blue background */
+.footer div {
+  background: #003366 !important;
+}
+
+.footer .footer-container,
+.footer .footer-section,
+.footer .company-info,
+.footer .footer-logo,
+.footer .contact-info,
+.footer .logo-grid,
+.footer .logo-item,
+.footer .quick-links,
+.footer .footer-links,
+.footer .footer-bottom,
+.footer .footer-bottom-content,
+.footer .footer-controls,
+.footer .footer-social,
+.footer .social-links,
+.footer .theme-toggle {
+  background: #003366 !important;
+}
+
+/* Force all elements inside footer to have dark blue background */
+.footer * {
+  background: #003366 !important;
+}
+
+/* Ensure the logo area stays truly transparent (no box behind the PNG) */
+.footer .footer-logo,
+.footer .footer-logo *,
+.footer .footer-logo-image {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Override any specific background colors in footer */
+.footer .contact-info,
+.footer .logo-item,
+.footer .social-link,
+.footer .theme-toggle-btn {
+  background: #003366 !important;
+}
+
+/* Remove dark mode toggle UI entirely */
+.theme-toggle,
+.theme-toggle-btn,
+.theme-confirmation {
+  display: none !important;
 }
 
 .footer-bottom-content {
@@ -209,19 +268,27 @@
 
 .copyright {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-muted);
   margin: 0;
   line-height: 1.5;
 }
 
 .highlight-blue {
-  color: #1E90FF;
+  color: var(--accent-blue);
   font-weight: 600;
 }
 
 .highlight-red {
-  color: #FF0000;
+  color: var(--accent-red);
   font-weight: 600;
+}
+
+.footer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-social {
@@ -232,7 +299,7 @@
 
 .social-text {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -270,6 +337,205 @@
   filter: grayscale(0);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.theme-toggle-btn:hover::before {
+  left: 100%;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(30, 144, 255, 0.2);
+  border-color: rgba(30, 144, 255, 0.6);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(30, 144, 255, 0.4);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.theme-toggle-btn:focus {
+  outline: 3px solid #1E90FF;
+  outline-offset: 3px;
+}
+
+.theme-toggle-btn.animating {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.theme-toggle-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.theme-toggle-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.theme-icon.spinning {
+  animation: spin 0.8s ease-in-out;
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.theme-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Confirmation Message */
+.theme-confirmation {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+.confirmation-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 200, 0, 0.9);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 200, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirmation-icon {
+  font-size: 1rem;
+  animation: sparkle 1s ease-in-out infinite;
+}
+
+.confirmation-text {
+  white-space: nowrap;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+}
+
+/* Brand Name Styling - Emphasized */
+.brand-name {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  transform: scale(1.1);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.brand-let {
+  color: #1E3A8A; /* Dark blue for "Let" (L, e, t) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-apostrophe {
+  color: #FCD34D; /* Yellow for apostrophe */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+}
+
+.brand-s {
+  color: #1E3A8A; /* Dark blue for "s" */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-pay {
+  color: #60A5FA; /* Light blue for "pay" (p, a, y) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
@@ -286,8 +552,11 @@
   }
   
   .logo-item {
-    padding: 15px;
-    min-height: 80px;
+    padding: 0;
+    min-height: auto;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   .partner-logo,
@@ -305,7 +574,16 @@
     text-align: center;
   }
   
+  .footer-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
   .footer-social {
+    justify-content: center;
+  }
+  
+  .theme-toggle {
     justify-content: center;
   }
 }
@@ -333,8 +611,11 @@
   }
   
   .logo-item {
-    padding: 12px;
-    min-height: 70px;
+    padding: 0;
+    min-height: auto;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   .partner-logo,
@@ -373,20 +654,22 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .footer {
-    background: #000;
-    color: #fff;
+    background: #003366 !important;
+    color: var(--text-primary);
   }
   
   .logo-item {
-    border: 2px solid #fff;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
   
   .footer-link {
-    color: #fff;
+    color: var(--text-primary);
   }
   
   .footer-link:hover {
-    color: #1E90FF;
+    color: var(--accent-blue);
   }
 }
 

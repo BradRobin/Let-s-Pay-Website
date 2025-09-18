@@ -12,7 +12,7 @@
 
 .experience-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: #0a2a6c;
   margin-bottom: 20px;
   background: linear-gradient(45deg, #1E90FF, #00CED1);
   -webkit-background-clip: text;
@@ -22,7 +22,7 @@
 
 .experience-subtitle {
   font-size: 1.3rem;
-  color: #666;
+  color: #0a2a6c;
   font-style: italic;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .stat-label {
-  color: #666;
+  color: #0a2a6c;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -75,7 +75,7 @@
 
 .domains-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #0a2a6c;
   text-align: center;
   margin-bottom: 50px;
   position: relative;
@@ -132,7 +132,7 @@
 .domain-list li {
   padding: 12px 0;
   border-bottom: 1px solid rgba(30, 144, 255, 0.1);
-  color: #666;
+  color: #0a2a6c;
   font-size: 1rem;
   position: relative;
   padding-left: 25px;
@@ -157,7 +157,7 @@
 
 .industries-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #0a2a6c;
   text-align: center;
   margin-bottom: 50px;
   position: relative;
@@ -205,13 +205,13 @@
 
 .industry-card h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #0a2a6c;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
 .industry-card p {
-  color: #666;
+  color: #0a2a6c;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -222,7 +222,7 @@
 
 .capabilities-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #0a2a6c;
   text-align: center;
   margin-bottom: 50px;
   position: relative;
@@ -271,7 +271,7 @@
 }
 
 .capability-item p {
-  color: #666;
+  color: #0a2a6c;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -284,7 +284,7 @@
 
 .achievements-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #0a2a6c;
   text-align: center;
   margin-bottom: 50px;
   position: relative;
@@ -338,15 +338,57 @@
 
 .achievement-text h3 {
   font-size: 1.3rem;
-  color: #333;
+  color: #0a2a6c;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .achievement-text p {
-  color: #666;
+  color: #0a2a6c;
   line-height: 1.6;
   font-size: 1rem;
+}
+
+/* Brand Name Styling - Emphasized */
+.brand-name {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  transform: scale(1.1);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.brand-let {
+  color: #1E3A8A; /* Dark blue for "Let" (L, e, t) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-apostrophe {
+  color: #FCD34D; /* Yellow for apostrophe */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+}
+
+.brand-s {
+  color: #1E3A8A; /* Dark blue for "s" */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-pay {
+  color: #60A5FA; /* Light blue for "pay" (p, a, y) */
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */

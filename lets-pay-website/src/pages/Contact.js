@@ -11,7 +11,7 @@ const Contact = () => {
             <h1 className="section-title">Contact <span className="highlight-blue">Information</span></h1>
             <div className="contact-info-block">
               <div className="contact-header">
-                <h2 className="highlight-cyan">Let'sPay Limited</h2>
+                <h2 className="highlight-cyan"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> Limited</h2>
                 <p className="contact-subtitle">Get in touch with our team for inquiries, support, or partnership opportunities</p>
               </div>
               

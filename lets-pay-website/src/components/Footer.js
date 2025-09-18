@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
+  // Dark mode removed; site stays consistently light
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -9,13 +11,13 @@ const Footer = () => {
         <div className="footer-section company-info">
           <div className="footer-logo">
             <img 
-              src="/letspay-logo-new.png" 
-              alt="Let'sPay Logo" 
+              src="/images/letspay_logo-removebg-preview.png?v=2" 
+              alt="Let'spay Transparent Logo" 
               className="footer-logo-image"
             />
           </div>
           <p className="company-description">
-            Let'sPay is an international private limited company providing 
+            <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> is an international private limited company providing 
             comprehensive financial management and enterprise solutions across 
             all continents of the world.
           </p>
@@ -173,22 +175,24 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © 2024 Let'sPay Limited. All rights reserved. | 
+              © 2024 <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> Limited. All rights reserved. | 
               <span className="highlight-blue"> International Trademark Brand</span> | 
               Registered in <span className="highlight-red">KENYA</span>
             </p>
-            <div className="footer-social">
-              <span className="social-text">Follow us:</span>
-              <div className="social-links">
-                <a href="https://linkedin.com/company/letspay" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <span className="social-icon">💼</span>
-                </a>
-                <a href="https://twitter.com/letspay" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                  <span className="social-icon">🐦</span>
-                </a>
-                <a href="https://facebook.com/letspay" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                  <span className="social-icon">📘</span>
-                </a>
+            <div className="footer-controls">
+              <div className="footer-social">
+                <span className="social-text">Follow us:</span>
+                <div className="social-links">
+                  <a href="https://linkedin.com/company/letspay" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <span className="social-icon">💼</span>
+                  </a>
+                  <a href="https://twitter.com/letspay" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                    <span className="social-icon">🐦</span>
+                  </a>
+                  <a href="https://facebook.com/letspay" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <span className="social-icon">📘</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

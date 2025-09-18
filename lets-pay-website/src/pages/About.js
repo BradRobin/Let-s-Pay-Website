@@ -8,29 +8,29 @@ const About = () => {
       <section className="flow-section intro-section">
         <div className="flow-container">
           <div className="text-content">
-            <h1 className="section-title">About <span className="highlight-blue">Let'sPay</span></h1>
+            <h1 className="section-title">About <span className="highlight-blue"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span></span></h1>
             <p className="intro-text">
-              <span className="highlight-cyan">Let's Pay</span> is an international private limited company with a presence in Kenya. 
-              Let's Pay was formed in <span className="highlight-red">2009</span> by professionals from the card payment domain, 
+              <span className="highlight-cyan"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span></span> is an international private limited company with a presence in Kenya. 
+              <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> was formed in <span className="highlight-red">2009</span> by professionals from the card payment domain, 
               the technology and banking domain, who share a common vision to implement a 
               secure payment platform system, targeting the global market.
             </p>
             <p className="intro-text">
-              Let's Pay also focuses on emerging mobile technology and offers secure 
+              <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> also focuses on emerging mobile technology and offers secure 
               electronic payment services using a mobile application (mobile app) for 
               facilitating various payments like collecting and managing revenues, bill 
-              payments, etc., through Account/Wallet/Card. Let's Pay is a 
+              payments, etc., through Account/Wallet/Card. <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> is a 
               <span className="highlight-blue"> tier one bank core system</span> used across all continents of the world.
             </p>
             <p className="trademark-text">
-              Let's Pay is an international trademark brand also registered in <span className="highlight-red">KENYA</span>.
+              <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> is an international trademark brand also registered in <span className="highlight-red">KENYA</span>.
             </p>
           </div>
           <div className="image-content">
             <div className="image-display">
               <img 
                 src="/images/let's pay overview.png" 
-                alt="Let'sPay International Company Overview" 
+                alt="Let'spay International Company Overview" 
                 className="section-image"
               />
               <h3>International Company</h3>
@@ -47,7 +47,7 @@ const About = () => {
             <div className="image-display">
               <img 
                 src="/images/solutions for healthcare.png" 
-                alt="Let'sPay Company Focus and Solutions" 
+                alt="Let'spay Company Focus and Solutions" 
                 className="section-image"
               />
               <h3>Company Focus</h3>
@@ -107,7 +107,7 @@ const About = () => {
             <div className="image-display">
               <img 
                 src="/images/Team.png" 
-                alt="Let'sPay Professional Team" 
+                alt="Let'spay Professional Team" 
                 className="section-image"
               />
               <h3>Professional Team</h3>
@@ -124,7 +124,7 @@ const About = () => {
             <div className="image-display">
               <img 
                 src="/images/smart telemedicine devices.png" 
-                alt="Let'sPay Healthcare Vision and Telemedicine" 
+                alt="Let'spay Healthcare Vision and Telemedicine" 
                 className="section-image"
               />
               <h3>Healthcare Vision</h3>
@@ -159,19 +159,19 @@ const About = () => {
             <div className="strengths-list">
               <div className="strength-item">
                 <h3 className="highlight-blue">Domain Expertise</h3>
-                <p>Let's Pay Technical team has a wealth of Domain expertise and has on its rolls subject matter experts who have participated in similar projects and interact with the users at all levels.</p>
+                <p>Let'spay Technical team has a wealth of Domain expertise and has on its rolls subject matter experts who have participated in similar projects and interact with the users at all levels.</p>
               </div>
               <div className="strength-item">
                 <h3 className="highlight-red">24/7 Support</h3>
-                <p>The commitment and sincerity of Let's Pay service engineers is something to be experienced to believe. Let's Pay support services are extended through the Customer Support Centre 24/7 help desk support team.</p>
+                <p>The commitment and sincerity of Let'spay service engineers is something to be experienced to believe. Let'spay support services are extended through the Customer Support Centre 24/7 help desk support team.</p>
               </div>
               <div className="strength-item">
                 <h3 className="highlight-cyan">Technological Competence</h3>
-                <p>Let's Pay engineers are technologically competent to deliver complex solutions. Understanding business requirements of Clients - Having worked very closely with clients in different countries for 9+ years.</p>
+                <p>Let'spay engineers are technologically competent to deliver complex solutions. Understanding business requirements of Clients - Having worked very closely with clients in different countries for 9+ years.</p>
               </div>
               <div className="strength-item">
                 <h3 className="highlight-blue">Quality Standards</h3>
-                <p>Let's Pay will provide solutions and services, whose quality standards will be second to none. The group has a vision to expand the business of providing the most efficient & customer-centric services.</p>
+                <p>Let'spay will provide solutions and services, whose quality standards will be second to none. The group has a vision to expand the business of providing the most efficient & customer-centric services.</p>
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ const About = () => {
             <div className="image-display">
               <img 
                 src="/images/Happy customers.png" 
-                alt="Let'sPay Company Strengths and Excellence" 
+                alt="Let'spay Company Strengths and Excellence" 
                 className="section-image"
               />
               <h3>Our Strengths</h3>

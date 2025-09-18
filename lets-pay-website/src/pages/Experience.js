@@ -1,5 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Experience.css';
+
+const AnimatedCounter = ({ to, duration = 1600, suffix = '' }) => {
+  const [value, setValue] = useState(0);
+  const hasStartedRef = useRef(false);
+  const nodeRef = useRef(null);
+
+  useEffect(() => {
+    const el = nodeRef.current;
+    if (!el) return;
+    let rafId = 0;
+    let obs;
+    const startAnim = () => {
+      if (hasStartedRef.current) return;
+      hasStartedRef.current = true;
+      const start = performance.now();
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = easeOutCubic(p);
+        setValue(Math.floor(eased * to));
+        if (p < 1) rafId = requestAnimationFrame(tick); else setValue(to);
+      };
+      rafId = requestAnimationFrame(tick);
+    };
+    if ('IntersectionObserver' in window) {
+      obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            startAnim();
+            if (obs && el) obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -15% 0px' });
+      obs.observe(el);
+    } else {
+      startAnim();
+    }
+    return () => { if (obs && el) obs.unobserve(el); if (rafId) cancelAnimationFrame(rafId); };
+  }, [to, duration]);
+
+  return <span ref={nodeRef}>{value}{suffix}</span>;
+};
 
 const Experience = () => {
   return (
@@ -15,11 +57,11 @@ const Experience = () => {
         <div className="experience-content">
           <div className="experience-stats">
             <div className="stat-card">
-              <div className="stat-number">1000+</div>
-              <div className="stat-label">Man-years of experience</div>
+              <div className="stat-number"><AnimatedCounter to={935} duration={1800} suffix="" /></div>
+              <div className="stat-label">Years of combined experience</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">9+</div>
+              <div className="stat-number"><AnimatedCounter to={16} duration={1400} suffix="+" /></div>
               <div className="stat-label">Years in business</div>
             </div>
             <div className="stat-card">
