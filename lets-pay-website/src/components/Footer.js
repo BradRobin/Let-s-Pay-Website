@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -99,75 +100,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Client Logos */}
-        <div className="footer-section clients">
-          <h3 className="footer-title">Our Clients</h3>
-          <div className="logo-grid">
-            <div className="logo-item">
-              <img 
-                src="/images/WHO logo.png" 
-                alt="World Health Organization Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/amref logo.png" 
-                alt="AMREF Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/Kenyatta university logo.png" 
-                alt="Kenyatta University Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/evans medical centre logo.png" 
-                alt="Evans Medical Centre Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/Kiambu county government logo.png" 
-                alt="Kiambu County Government Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/embu county government logo.png" 
-                alt="Embu County Government Client" 
-                className="client-logo"
-              />
-            </div>
-            <div className="logo-item">
-              <img 
-                src="/images/Narok county government logo.png" 
-                alt="Narok County Government Client" 
-                className="client-logo"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* Quick Links */}
-        <div className="footer-section quick-links">
-          <h3 className="footer-title">Quick Links</h3>
-          <ul className="footer-links">
-            <li><a href="/" className="footer-link">Home</a></li>
-            <li><a href="/about" className="footer-link">About</a></li>
-            <li><a href="/services" className="footer-link">Services</a></li>
-            <li><a href="/why-us" className="footer-link">Why Us</a></li>
-            <li><a href="/experience" className="footer-link">Experience</a></li>
-            <li><a href="/clients" className="footer-link">Clients</a></li>
-            <li><a href="/contact" className="footer-link">Contact</a></li>
-          </ul>
-        </div>
       </div>
 
       {/* Footer Bottom */}
@@ -180,6 +113,9 @@ const Footer = () => {
               Registered in <span className="highlight-red">KENYA</span>
             </p>
             <div className="footer-controls">
+              <div className="footer-links">
+                <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+              </div>
               <div className="footer-social">
                 <span className="social-text">Follow us:</span>
                 <div className="social-links">

@@ -1,4 +1,5 @@
 import React from 'react';
+import LearnMoreButton from '../components/LearnMoreButton';
 import './Clients.css';
 
 const Clients = () => {
@@ -9,10 +10,12 @@ const Clients = () => {
         <div className="flow-container">
           <div className="text-content">
             <h1 className="section-title">Industries We <span className="highlight-blue">Serve</span></h1>
-            <p className="intro-text">
-              <span className="highlight-cyan"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> LTD</span> is a high technology company involved in the development, 
-              design, and customization of secure management systems serving the following industries:
-            </p>
+            <div className="info-block">
+              <p className="intro-text">
+                <span className="highlight-cyan"><span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span> LTD</span> is a high technology company involved in the development, 
+                design, and customization of secure management systems serving the following industries:
+              </p>
+            </div>
             <div className="industries-grid">
               <div className="industry-card">
                 <div className="industry-icon">🏦</div>
@@ -44,6 +47,12 @@ const Clients = () => {
                 <p>Comprehensive Solutions</p>
               </div>
             </div>
+            <LearnMoreButton
+              title="Multi-Industry Solutions"
+              description="We serve diverse industries including Banking & Finance, Healthcare, Energy Systems, and ICT Networks. Our comprehensive solutions cover payment processing, enterprise resource planning, and specialized industry requirements with proven implementations across multiple continents."
+              ctaText="Explore Industries"
+              ctaLink="/clients"
+            />
           </div>
         </div>
       </section>
@@ -88,11 +97,13 @@ const Clients = () => {
         <div className="flow-container">
           <div className="text-content">
             <h2 className="section-title">Client <span className="highlight-red">Solutions</span></h2>
-            <p className="solutions-text">
-              <span className="highlight-blue">IT solutions provider</span> for Financial & Enterprise 
-              verticals. Have comprehensive & emerging technology-based products for the 
-              <span className="highlight-cyan"> Payment, Health & HR domains</span>.
-            </p>
+            <div className="info-block">
+              <p className="solutions-text">
+                <span className="highlight-blue">IT solutions provider</span> for Financial & Enterprise 
+                verticals. Have comprehensive & emerging technology-based products for the 
+                <span className="highlight-cyan"> Payment, Health & HR domains</span>.
+              </p>
+            </div>
             <div className="solutions-list">
               <div className="solution-item">
                 <div className="solution-icon">💻</div>
@@ -160,12 +171,14 @@ const Clients = () => {
                 <span className="stat-label">Continental Coverage</span>
               </div>
             </div>
-            <p className="global-text">
-              Have nearly <span className="highlight-red">1000 Man Years</span> of experience across 
-              payment and enterprise domains. A pool of human minds with deep-rooted knowledge across 
-              multiple industry verticals. Work with you end-to-end. Stay till the end to ensure you 
-              get the objectives fulfilled.
-            </p>
+            <div className="info-block">
+              <p className="global-text">
+                Have nearly <span className="highlight-red">1000 Man Years</span> of experience across 
+                payment and enterprise domains. A pool of human minds with deep-rooted knowledge across 
+                multiple industry verticals. Work with you end-to-end. Stay till the end to ensure you 
+                get the objectives fulfilled.
+              </p>
+            </div>
             <div className="global-features">
               <div className="global-feature">Hands-on approach</div>
               <div className="global-feature">Secure Robust Platform</div>
@@ -218,13 +231,11 @@ const Clients = () => {
             </div>
           </div>
           <div className="image-content">
-            <div className="placeholder-image">
-              <div className="placeholder-content">
-                <div className="placeholder-icon">⭐</div>
-                <h3>Client Satisfaction</h3>
-                <p>99.9% Success Rate</p>
-              </div>
-            </div>
+            <img 
+              src="/images/Happy customers.png" 
+              alt="Let's Pay Happy Customers - Institutional Trust and Customer Satisfaction Across Government, Healthcare, and Educational Organizations Including Ministry of Youth Sports Arts Recreation Zimbabwe, Amref Health Africa, Evans Sunrise Medical Centre" 
+              className="client-success-image"
+            />
           </div>
         </div>
       </section>

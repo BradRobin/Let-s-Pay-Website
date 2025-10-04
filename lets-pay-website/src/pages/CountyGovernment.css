@@ -3,6 +3,56 @@
   padding-top: 80px;
 }
 
+/* Clean Rectangular Paragraph Layout */
+.info-block {
+  max-width: 760px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.info-block p {
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: 1rem;
+  color: #333333 !important;
+}
+
+.info-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-block {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 10px;
+  }
+  
+  .info-block p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-block {
+    padding: 12px;
+    margin: 0 5px;
+  }
+  
+  .info-block p {
+    font-size: 0.9rem;
+  }
+}
+
 /* Flow Section Styles */
 .flow-section {
   padding: 80px 0;
@@ -10,21 +60,25 @@
 }
 
 .flow-container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   align-items: center;
+  min-height: auto;
 }
 
 .text-content {
   animation: fadeInUp 0.8s ease-out;
+  text-align: center;
+  order: 3;
 }
 
 .image-content {
   animation: fadeInRight 0.8s ease-out;
+  order: 2;
 }
 
 /* Section Titles */
@@ -34,13 +88,15 @@
   margin-bottom: 30px;
   color: var(--text-primary);
   line-height: 1.2;
+  text-align: center;
+  order: 1;
 }
 
 /* Text Content */
 .intro-text, .section-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #333333 !important;
   margin-bottom: 25px;
 }
 
@@ -49,10 +105,10 @@
   line-height: 1.8;
   color: var(--text-primary);
   font-weight: 500;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.1), rgba(30, 144, 255, 0.1));
-  border-left: 4px solid var(--accent-cyan);
-  border-radius: 8px;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
   margin: 30px 0;
 }
 
@@ -64,15 +120,485 @@
 
 .section-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   height: auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0 !important;
+  box-shadow: none !important;
   transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flow-container {
+    max-width: 100%;
+    padding: 0 20px;
+    gap: 30px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-container {
+    padding: 0 15px;
+    gap: 25px;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  /* Responsive horizontal flowing lists */
+  .revenue-features .scrolling-container,
+  .modules-grid .scrolling-container,
+  .g2c-features .scrolling-container,
+  .mobile-features .scrolling-container,
+  .revenue-features,
+  .modules-grid,
+  .g2c-features,
+  .mobile-features {
+    padding: 15px 0;
+  }
+  
+  .revenue-features .feature-card,
+  .modules-grid .module-item,
+  .g2c-features .feature-highlight,
+  .mobile-features .mobile-feature {
+    flex: 0 0 250px;
+    min-width: 250px;
+    padding: 15px;
+  }
+
+  /* Static tech stack grid responsive */
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  /* Tech logo tablet sizing */
+  .tech-logo {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 18px;
+  }
+
+  /* Dropdown responsive for tablet */
+  .dropdown-btn {
+    width: 22px;
+    height: 22px;
+  }
+
+  .chevron-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .image-title-container {
+    gap: 8px;
+    margin: 12px 0;
+  }
+
+  .dropdown-content {
+    padding: 10px;
+  }
+
+  .dropdown-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .revenue-features .scrolling-container,
+  .modules-grid .scrolling-container,
+  .g2c-features .scrolling-container,
+  .mobile-features .scrolling-container,
+  .revenue-features,
+  .modules-grid,
+  .g2c-features,
+  .mobile-features {
+    padding: 10px 0;
+  }
+  
+  .revenue-features .feature-card,
+  .modules-grid .module-item,
+  .g2c-features .feature-highlight,
+  .mobile-features .mobile-feature {
+    flex: 0 0 220px;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  /* Reduce blur width on mobile */
+  .revenue-features::before,
+  .revenue-features::after,
+  .modules-grid::before,
+  .modules-grid::after,
+  .g2c-features::before,
+  .g2c-features::after,
+  .mobile-features::before,
+  .mobile-features::after {
+    width: 30px;
+  }
+
+  /* Static tech stack grid mobile */
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  /* Tech logo responsive sizing */
+  .tech-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+
+  /* Dropdown responsive for mobile */
+  .dropdown-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .chevron-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .image-title-container {
+    gap: 6px;
+    margin: 10px 0;
+  }
+
+  .dropdown-content {
+    padding: 8px;
+  }
+
+  .dropdown-content p {
+    font-size: 0.8rem;
+  }
 }
 
 .section-image:hover {
   transform: translateY(-5px);
+}
+
+/* Horizontal Flowing Lists Container */
+.revenue-features,
+.modules-grid,
+.g2c-features,
+.mobile-features {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 30px 0;
+  white-space: nowrap;
+}
+
+/* Static Tech Stack Grid */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 30px 0;
+  margin: 30px 0;
+}
+
+/* Inner scrolling container */
+.revenue-features .scrolling-container,
+.modules-grid .scrolling-container,
+.g2c-features .scrolling-container,
+.mobile-features .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.revenue-features:hover .scrolling-container,
+.modules-grid:hover .scrolling-container,
+.g2c-features:hover .scrolling-container,
+.mobile-features:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.revenue-features::before,
+.revenue-features::after,
+.modules-grid::before,
+.modules-grid::after,
+.g2c-features::before,
+.g2c-features::after,
+.mobile-features::before,
+.mobile-features::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.revenue-features::before,
+.modules-grid::before,
+.g2c-features::before,
+.mobile-features::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.revenue-features::after,
+.modules-grid::after,
+.g2c-features::after,
+.mobile-features::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Individual items in flowing lists */
+.revenue-features .feature-card,
+.modules-grid .module-item,
+.g2c-features .feature-highlight,
+.mobile-features .mobile-feature {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: transparent !important;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Static tech item styles */
+.tech-stack-grid .tech-item {
+  background: transparent !important;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Tech title container with dropdown button */
+.tech-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tech-title-container h4 {
+  margin: 0;
+  flex: 1;
+}
+
+/* Image title container with dropdown button */
+.image-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.image-title-container h3 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+/* Dropdown button styles */
+.dropdown-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.dropdown-btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+.dropdown-btn:active {
+  transform: scale(0.95);
+}
+
+/* Chevron icon styles */
+.chevron-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+  stroke: white;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+.dropdown-content p {
+  margin: 0;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced hover effects with pop-up animation */
+.revenue-features .feature-card:hover,
+.modules-grid .module-item:hover,
+.g2c-features .feature-highlight:hover,
+.mobile-features .mobile-feature:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+}
+
+/* Simple hover effect for static tech items */
+.tech-stack-grid .tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition for all items */
+.revenue-features .feature-card,
+.modules-grid .module-item,
+.g2c-features .feature-highlight,
+.mobile-features .mobile-feature {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animation for flowing effect - right to left infinite loop */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Security Images Carousel */
+.security-images {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.security-images::before,
+.security-images::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.security-images::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
+}
+
+.security-images::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
+}
+
+.security-images .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%;
+}
+
+.security-images .security-item {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: transparent !important;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  white-space: normal;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.security-images .security-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.security-images .security-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.security-images .security-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Hover effects */
+.security-images:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+.security-images .security-item:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
 }
 
 .image-display h3 {
@@ -96,18 +622,18 @@
 }
 
 .feature-card {
-  background: var(--bg-primary);
-  padding: 25px;
-  border-radius: 12px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0, 194, 194, 0.2);
+  box-shadow: none !important;
+  transition: transform 0.3s ease;
+  border: none !important;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: none !important;
 }
 
 .feature-icon {
@@ -137,13 +663,13 @@
 }
 
 .module-item {
-  background: var(--bg-primary);
-  padding: 20px;
-  border-radius: 10px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
   transition: transform 0.3s ease;
-  border: 1px solid rgba(30, 144, 255, 0.2);
+  border: none !important;
 }
 
 .module-item:hover {
@@ -177,19 +703,19 @@
 }
 
 .feature-highlight {
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.1), rgba(30, 144, 255, 0.1));
-  padding: 15px 20px;
-  border-radius: 8px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
   font-weight: 500;
   color: var(--text-primary);
-  border: 1px solid rgba(0, 194, 194, 0.3);
+  border: none !important;
   transition: transform 0.3s ease;
 }
 
 .feature-highlight:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.2), rgba(30, 144, 255, 0.2));
+  background: transparent !important;
 }
 
 /* Mobile Features */
@@ -201,13 +727,13 @@
 }
 
 .mobile-feature {
-  background: var(--bg-primary);
-  padding: 20px;
-  border-radius: 10px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
   transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 0, 0, 0.2);
+  border: none !important;
 }
 
 .mobile-feature:hover {
@@ -241,26 +767,26 @@
 }
 
 .tech-item {
-  background: var(--bg-primary);
-  padding: 20px;
-  border-radius: 12px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 194, 194, 0.2);
+  border: none !important;
 }
 
 .tech-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--accent-cyan);
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 .tech-logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -290,13 +816,13 @@
 }
 
 .security-feature {
-  background: var(--bg-primary);
-  padding: 20px;
-  border-radius: 10px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
   transition: transform 0.3s ease;
-  border: 1px solid rgba(0, 194, 194, 0.2);
+  border: none !important;
 }
 
 .security-feature:hover {
@@ -464,19 +990,19 @@
 }
 
 .gallery-item {
-  background: var(--bg-primary);
-  padding: 15px;
-  border-radius: 12px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 194, 194, 0.2);
+  border: none !important;
 }
 
 .gallery-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--accent-cyan);
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 .gallery-image {
@@ -564,37 +1090,16 @@
   margin-top: 25px;
 }
 
-/* Section-specific styling */
-.payment-solutions-section {
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.05), rgba(30, 144, 255, 0.05));
-}
-
-.architecture-section {
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(255, 0, 0, 0.05));
-}
-
-.services-section {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.05), rgba(0, 194, 194, 0.05));
-}
-
-.fleet-section {
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.05), rgba(30, 144, 255, 0.05));
-}
-
-.biometrics-section {
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(255, 0, 0, 0.05));
-}
-
-.development-section {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.05), rgba(0, 194, 194, 0.05));
-}
-
-.connectivity-section {
-  background: linear-gradient(135deg, rgba(0, 194, 194, 0.05), rgba(30, 144, 255, 0.05));
-}
-
+/* All sections have consistent white background */
+.payment-solutions-section,
+.architecture-section,
+.services-section,
+.fleet-section,
+.biometrics-section,
+.development-section,
+.connectivity-section,
 .analytics-section {
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(255, 0, 0, 0.05));
+  background: #ffffff !important;
 }
 
 /* Responsive Gallery */
@@ -636,6 +1141,26 @@
   .development-features {
     grid-template-columns: 1fr;
   }
+
+  /* Security Images Carousel - Responsive */
+  .security-images .scrolling-container {
+    gap: 20px;
+  }
+
+  .security-images .security-item {
+    flex: 0 0 220px;
+    min-width: 220px;
+    padding: 15px;
+  }
+
+  .security-images .security-item img {
+    height: 160px;
+  }
+
+  .security-images::before,
+  .security-images::after {
+    width: 50px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -652,6 +1177,34 @@
   
   .gallery-image {
     height: 100px;
+  }
+
+  /* Security Images Carousel - Mobile */
+  .security-images .scrolling-container {
+    gap: 15px;
+  }
+
+  .security-images .security-item {
+    flex: 0 0 180px;
+    min-width: 180px;
+    padding: 12px;
+  }
+
+  .security-images .security-item img {
+    height: 120px;
+  }
+
+  .security-images .security-item h4 {
+    font-size: 1rem;
+  }
+
+  .security-images .security-item p {
+    font-size: 0.8rem;
+  }
+
+  .security-images::before,
+  .security-images::after {
+    width: 30px;
   }
 }
 

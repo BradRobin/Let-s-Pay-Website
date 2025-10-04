@@ -1,0 +1,202 @@
+/* Global Spacing System - Consistent Layout Design */
+
+/* CSS Custom Properties for Spacing Scale */
+:root {
+  /* Spacing Scale - Based on 8px grid system */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 2.5rem;   /* 40px */
+  --space-3xl: 3rem;     /* 48px */
+  --space-4xl: 4rem;     /* 64px */
+  --space-5xl: 5rem;     /* 80px */
+  --space-6xl: 6rem;     /* 96px */
+  --space-7xl: 8rem;     /* 128px */
+  
+  /* Section Spacing Standards */
+  --section-padding-y: var(--space-5xl);  /* 80px - Substantial section separation */
+  --section-padding-y-sm: var(--space-4xl); /* 64px - Reduced for mobile */
+  --section-padding-y-xs: var(--space-3xl); /* 48px - Minimal for small screens */
+  
+  /* Content Container Padding */
+  --container-padding-section: var(--space-2xl); /* 40px - Standard section container */
+  --container-padding-content: var(--space-lg);   /* 24px - Content container */
+  --container-padding-mobile: var(--space-md);    /* 16px - Mobile container */
+  
+  /* Title Spacing */
+  --title-margin-bottom-tight: var(--space-xl);   /* 32px - Title to content gap */
+  --title-margin-bottom-relaxed: var(--space-2xl); /* 40px - Spacious title spacing */
+  
+  /* Content Element Spacing */
+  --content-block-margin: var(--space-2xl);       /* 40px - Between content blocks */
+  --content-item-gap: var(--space-lg);            /* 24px - Between related items */
+  --text-paragraph-gap: var(--space-sm);          /* 12px - Between paragraphs */
+  
+  /* Component Specific Spacing */
+  --footer-contact-padding: var(--space-lg);       /* 24px - Footer contact info */
+  --nav-item-gap: var(--space-md);                 /* 16px - Navigation items */
+  --card-padding: var(--space-lg);                 /* 24px - Card/interactive elements */
+}
+
+/* Global Section Base Spacing */
+.flow-section {
+  padding: var(--section-padding-y) 0;
+  position: relative;
+}
+
+/* Section Title Spacing Rules */
+.section-title {
+  margin-bottom: var(--title-margin-bottom-tight);
+}
+
+.section-title-sm {
+  margin-bottom: var(--space-lg);
+}
+
+.section-subtitle {
+  margin-bottom: var(--space-md);
+}
+
+/* Content Container Standards */
+.flow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding-section);
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-block-margin);
+  align-items: center;
+}
+
+.text-content {
+  padding: var(--space-lg) 0;
+}
+
+/* Content Block Spacing */
+.info-block {
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+  width: 100%;
+}
+
+.info-block p:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+/* Footer Contact Information Alignment */
+.contact-info {
+  text-align: left;
+}
+
+.contact-info p {
+  margin-bottom: var(--space-sm);
+  padding-left: 0;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer Footer-specific Adjustments */
+.footer-section {
+  margin-bottom: var(--space-xl);
+}
+
+.footer-links {
+  gap: var(--space-md);
+}
+
+/* Responsive Spacing Overrides */
+@media (max-width: 768px) {
+  :root {
+    --container-padding-section: var(--container-padding-mobile);
+    --section-padding-y: var(--section-padding-y-sm);
+  }
+  
+  .flow-container {
+    gap: var(--space-xl);
+  }
+  
+  .info-block {
+    padding: var(--space-lg);
+  }
+  
+  .section-title {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: var(--section-padding-y-xs);
+    --container-padding-section: var(--space-md);
+  }
+  
+  .flow-container {
+    gap: var(--space-lg);
+  }
+  
+  .info-block {
+    padding: var(--space-md);
+    margin: 0 var(--space-sm);
+  }
+  
+  .contact-info {
+    padding: var(--space-md);
+  }
+}
+
+/* Spacing Utilities Classes */
+.spacing-xs { gap: var(--space-xs); }
+.spacing-sm { gap: var(--space-sm); }
+.spacing-md { gap: var(--space-md); }
+.spacing-lg { gap: var(--space-lg); }
+.spacing-xl { gap: var(--space-xl); }
+.spacing-2xl { gap: var(--space-2xl); }
+
+.margin-xs { margin: var(--space-xs); }
+.margin-sm { margin: var(--space-sm); }
+.margin-md { margin: var(--space-md); }
+.margin-lg { margin: var(--space-lg); }
+.margin-xl { margin: var(--space-xl); }
+
+.padding-xs { padding: var(--space-xs); }
+.padding-sm { padding: var(--space-sm); }
+.padding-md { padding: var(--space-md); }
+.padding-lg { padding: var(--space-lg); }
+.padding-xl { padding: var(--space-xl); }
+
+/* Section-specific spacing overrides for enhanced visual hierarchy */
+.intro-section .section-title {
+  margin-bottom: var(--title-margin-bottom-relaxed);
+}
+
+.content-section .section-title {
+  margin-bottom: var(--title-margin-bottom-tight);
+}
+
+/* Professional left alignment for contact information blocks */
+.contact-block,
+.address-block,
+.company-details {
+  text-align: left;
+  padding-left: var(--space-md);
+}
+
+.contact-block p,
+.address-block p,
+.company-details p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* Enhanced section separation */
+.flow-section:not(:first-child) {
+  margin-top: var(--space-xl);
+}
+
+.flow-section:not(:last-child) {
+  margin-bottom: var(--space-xl);
+}

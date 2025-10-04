@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import CountyGovernment from './pages/CountyGovernment';
@@ -10,6 +11,7 @@ import WhyUs from './pages/WhyUs';
 import Experience from './pages/Experience';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { initScrollAnimations, initParallax } from './utils/scrollAnimations';
 import './App.css';
 
@@ -28,6 +30,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
       <main id="main-content">
@@ -40,6 +43,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />

@@ -4,29 +4,104 @@
   font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
-/* Flow Section Base Styles */
+/* Force text color overrides for About page */
+.about .intro-text,
+.about .experience-text,
+.about .focus-text,
+.about .healthcare-text {
+  color: #333333 !important;
+}
+
+.about .highlight-blue,
+.about .highlight-cyan {
+  color: #333333 !important;
+}
+
+.about .trademark-text {
+  color: #333333 !important;
+}
+
+/* Clean Rectangular Paragraph Layout */
+.info-block {
+  max-width: 760px;
+  width: 100%;
+  padding: var(--space-2xl);
+  margin: 0 auto var(--space-xl) auto;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.info-block p {
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: var(--space-md);
+  color: #333333 !important;
+}
+
+.info-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-block {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 10px;
+  }
+  
+  .info-block p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-block {
+    padding: 12px;
+    margin: 0 5px;
+  }
+  
+  .info-block p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Flow Section Base Styles - Enhanced with Global Spacing */
 .flow-section {
-  padding: 80px 0;
+  padding: var(--section-padding-y) 0;
   position: relative;
+  margin: var(--space-lg) 0;
 }
 
-.flow-section:nth-child(odd) {
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(0, 206, 209, 0.05));
+/* Enhanced section separation for better visual hierarchy */
+.flow-section:not(:first-child) {
+  margin-top: var(--space-2xl);
 }
 
+.flow-section:not(:last-child) {
+  margin-bottom: var(--space-2xl);
+}
+
+/* All sections have consistent white background */
+.flow-section:nth-child(odd),
 .flow-section:nth-child(even) {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.9));
+  background: #ffffff !important;
 }
 
 .flow-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  padding: 0 var(--container-padding-section);
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-block-margin);
   align-items: center;
-  min-height: 500px;
+  min-height: auto;
 }
 
 /* Text Content Styles */
@@ -34,29 +109,46 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px 0;
+  padding: var(--space-lg) 0;
+  text-align: center;
+  order: 3;
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 30px;
+  color: var(--text-title);
+  margin-bottom: var(--title-margin-bottom-tight);
+  margin-top: 0;
   line-height: 1.2;
   font-family: 'Arial', 'Helvetica', sans-serif;
+  text-align: center;
+  order: 1;
+}
+
+/* Section-specific title positioning for intro sections */
+.intro-section .section-title {
+  margin-bottom: var(--title-margin-bottom-relaxed);
+  margin-top: var(--space-lg);
+}
+
+/* Regular content section titles */
+.content-section .section-title {
+  margin-bottom: var(--title-margin-bottom-tight);
+  margin-top: var(--space-md);
 }
 
 /* Color Highlights using Logo Color Scheme */
 .highlight-blue {
-  color: var(--accent-blue);
+  color: #333333 !important;
   font-weight: 600;
-  text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+  text-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
 }
 
 .highlight-cyan {
-  color: var(--accent-cyan);
+  color: #333333 !important;
   font-weight: 600;
-  text-shadow: 0 0 5px rgba(0, 206, 209, 0.3);
+  text-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
 }
 
 .highlight-red {
@@ -71,20 +163,20 @@
 .healthcare-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #333333 !important;
   margin-bottom: 20px;
   font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .trademark-text {
   font-size: 1rem;
-  color: var(--accent-blue);
+  color: #333333 !important;
   font-weight: 600;
   font-style: italic;
   margin-top: 20px;
   padding: 15px;
-  background: rgba(30, 144, 255, 0.1);
-  border-left: 4px solid #1E90FF;
+  background: rgba(51, 51, 51, 0.1);
+  border-left: 4px solid #333333;
   border-radius: 0 8px 8px 0;
 }
 
@@ -93,21 +185,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: var(--space-lg) 0;
+  order: 2;
 }
 
-/* Image Display Styles */
+/* Image Display Styles - Transparent Background */
 .image-display {
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
   transition: transform 0.3s ease;
   text-align: center;
+}
+
+/* Responsive Design - Using Global Spacing Variables */
+@media (max-width: 768px) {
+  .flow-container {
+    max-width: 100%;
+    padding: 0 var(--container-padding-mobile);
+    gap: var(--space-xl);
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .flow-section {
+    padding: var(--section-padding-y-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-container {
+    padding: 0 var(--space-md);
+    gap: var(--space-lg);
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .flow-section {
+    padding: var(--section-padding-y-xs) 0;
+  }
 }
 
 .image-display:hover {
@@ -120,10 +246,10 @@
   max-height: 300px;
   object-fit: contain;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   background: var(--bg-secondary);
-  padding: 10px;
+  padding: var(--space-sm);
   transition: all 0.3s ease;
 }
 
@@ -136,7 +262,7 @@
 .image-display h3 {
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-sm);
   color: var(--accent-blue);
 }
 
@@ -144,21 +270,20 @@
   font-size: 1.1rem;
   color: var(--text-muted);
   font-style: italic;
+  margin-bottom: var(--space-lg);
 }
 
 /* Placeholder Images */
 .placeholder-image {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(0, 206, 209, 0.1));
-  border-radius: 20px;
+  background: transparent !important;
+  border-radius: 0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none !important;
+  border: none !important;
   transition: transform 0.3s ease;
 }
 
@@ -200,9 +325,9 @@
 .stat-item {
   text-align: center;
   padding: 20px;
-  background: rgba(30, 144, 255, 0.1);
+  background: rgba(0, 51, 102, 0.1);
   border-radius: 15px;
-  border: 1px solid rgba(30, 144, 255, 0.2);
+  border: 1px solid rgba(0, 51, 102, 0.2);
   flex: 1;
 }
 
@@ -225,20 +350,84 @@
   margin-bottom: 30px;
 }
 
-.feature-item {
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  background: rgba(30, 144, 255, 0.05);
-  border-left: 4px solid #1E90FF;
-  border-radius: 0 8px 8px 0;
-  font-size: 1rem;
-  color: var(--text-secondary);
-  transition: all 0.3s ease;
+/* Horizontal Flowing Lists Container for Focus Features */
+.focus-features {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 30px 0;
+  white-space: nowrap;
 }
 
-.feature-item:hover {
-  background: rgba(30, 144, 255, 0.1);
-  transform: translateX(5px);
+/* Inner scrolling container */
+.focus-features .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.focus-features:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.focus-features::before,
+.focus-features::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.focus-features::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.focus-features::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Individual items in flowing lists */
+.focus-features .feature-item {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: rgba(0, 51, 102, 0.05) !important;
+  border-left: 4px solid var(--accent-blue);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  white-space: normal;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Enhanced hover effects with pop-up animation */
+.focus-features .feature-item:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+  background: rgba(0, 51, 102, 0.1) !important;
+}
+
+/* Animation for flowing effect - right to left infinite loop */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Infrastructure Highlight */
@@ -258,50 +447,243 @@
   margin: 0;
 }
 
-/* Healthcare Poem */
+/* Healthcare Poem as Horizontal Carousel */
 .healthcare-poem {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
   margin: 30px 0;
-  border-left: 4px solid #FF0000;
+  white-space: nowrap;
+}
+
+/* Inner scrolling container for poem */
+.healthcare-poem .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.healthcare-poem:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.healthcare-poem::before,
+.healthcare-poem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.healthcare-poem::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.healthcare-poem::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Poem lines as carousel items */
+.poem-line {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: rgba(255, 0, 0, 0.05) !important;
+  border-left: 4px solid var(--accent-red);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  white-space: normal;
+  font-size: 1.1rem;
+  color: var(--text-primary);
   font-style: italic;
   line-height: 1.6;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.poem-line {
-  margin: 8px 0;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+/* Enhanced hover effects with pop-up animation */
+.poem-line:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+  background: rgba(255, 0, 0, 0.1) !important;
 }
 
-/* Strengths List */
-.strengths-list {
-  margin-bottom: 30px;
+/* Education Features Carousel */
+.education-features {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 30px 0;
+  white-space: nowrap;
 }
 
-.strength-item {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 25px;
-  margin-bottom: 20px;
+/* Inner scrolling container for education features */
+.education-features .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.education-features:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.education-features::before,
+.education-features::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.education-features::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.education-features::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Education items as carousel items */
+.education-item {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: rgba(0, 51, 102, 0.05) !important;
+  border-left: 4px solid var(--accent-blue);
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  text-align: center;
+  white-space: normal;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.strength-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.education-item .education-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.education-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.education-item p {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Enhanced hover effects with pop-up animation */
+.education-item:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+  background: rgba(0, 51, 102, 0.1) !important;
+}
+
+/* Strengths List Carousel */
+.strengths-list {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 30px 0;
+  white-space: nowrap;
+}
+
+/* Inner scrolling container for strengths */
+.strengths-list .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.strengths-list:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.strengths-list::before,
+.strengths-list::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.strengths-list::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.strengths-list::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Strength items as carousel items */
+.strength-item {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: rgba(51, 51, 51, 0.05) !important;
+  border-left: 4px solid var(--text-primary);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  white-space: normal;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .strength-item h3 {
   font-size: 1.3rem;
-  font-weight: 600;
   margin-bottom: 15px;
+  font-weight: 600;
 }
+
+.strength-item p {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Enhanced hover effects with pop-up animation */
+.strength-item:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+  background: rgba(51, 51, 51, 0.1) !important;
+}
+
 
 .strength-item p {
   color: var(--text-muted);
@@ -387,6 +769,31 @@
   .strength-item {
     padding: 20px;
   }
+  
+  /* Responsive horizontal flowing lists */
+  .focus-features .scrolling-container,
+  .healthcare-poem .scrolling-container,
+  .education-features .scrolling-container,
+  .strengths-list .scrolling-container {
+    gap: 20px;
+    animation-duration: 25s;
+  }
+  
+  .focus-features,
+  .healthcare-poem,
+  .education-features,
+  .strengths-list {
+    padding: 15px 0;
+  }
+  
+  .focus-features .feature-item,
+  .poem-line,
+  .education-item,
+  .strength-item {
+    flex: 0 0 250px;
+    min-width: 250px;
+    padding: 15px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -429,5 +836,43 @@
   
   .poem-line {
     font-size: 1rem;
+  }
+  
+  /* Responsive horizontal flowing lists for mobile */
+  .focus-features .scrolling-container,
+  .healthcare-poem .scrolling-container,
+  .education-features .scrolling-container,
+  .strengths-list .scrolling-container {
+    gap: 15px;
+    animation-duration: 20s;
+  }
+  
+  .focus-features,
+  .healthcare-poem,
+  .education-features,
+  .strengths-list {
+    padding: 10px 0;
+  }
+  
+  .focus-features .feature-item,
+  .poem-line,
+  .education-item,
+  .strength-item {
+    flex: 0 0 220px;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  /* Reduce blur width on mobile */
+  .focus-features::before,
+  .focus-features::after,
+  .healthcare-poem::before,
+  .healthcare-poem::after,
+  .education-features::before,
+  .education-features::after,
+  .strengths-list::before,
+  .strengths-list::after {
+    width: 30px;
   }
 }

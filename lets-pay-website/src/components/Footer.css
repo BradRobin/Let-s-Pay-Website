@@ -1,6 +1,6 @@
 /* Footer Styles */
 .footer {
-  background: #003366 !important;
+  background: #000000 !important;
   color: var(--text-secondary);
   padding: 60px 0 0;
   margin-top: 80px;
@@ -26,7 +26,7 @@
   padding: 0 40px;
   position: relative;
   z-index: 1;
-  background: #003366 !important;
+  background: #000000 !important;
 }
 
 .footer-section {
@@ -184,7 +184,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, #1E90FF, #87CEEB);
+  background: linear-gradient(45deg, #003366, #87CEEB);
   transition: width 0.3s ease;
 }
 
@@ -199,7 +199,7 @@
 
 /* Footer Bottom */
 .footer-bottom {
-  background: #003366 !important;
+  background: #000000 !important;
   padding: 25px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 40px;
@@ -207,7 +207,7 @@
 
 /* Force all footer divs to have dark blue background */
 .footer div {
-  background: #003366 !important;
+  background: #000000 !important;
 }
 
 .footer .footer-container,
@@ -225,12 +225,12 @@
 .footer .footer-social,
 .footer .social-links,
 .footer .theme-toggle {
-  background: #003366 !important;
+  background: #000000 !important;
 }
 
 /* Force all elements inside footer to have dark blue background */
 .footer * {
-  background: #003366 !important;
+  background: #000000 !important;
 }
 
 /* Ensure the logo area stays truly transparent (no box behind the PNG) */
@@ -248,7 +248,7 @@
 .footer .logo-item,
 .footer .social-link,
 .footer .theme-toggle-btn {
-  background: #003366 !important;
+  background: #000000 !important;
 }
 
 /* Remove dark mode toggle UI entirely */
@@ -271,6 +271,66 @@
   color: var(--text-muted);
   margin: 0;
   line-height: 1.5;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: var(--space-xs) 0;
+}
+
+.footer-link:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/* Fixed Footer Contact Information - Professional Left Alignment */
+.footer .contact-info {
+  text-align: left !important;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.footer .contact-info p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+  text-align: left;
+  display: block;
+}
+
+.footer .contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure consistent spacing for all footer content */
+.footer-section.company-info .contact-info {
+  margin-top: var(--space-lg);
+  border-left: 3px solid rgba(0, 51, 102, 0.2);
+  background: rgba(0, 51, 102, 0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Footer bottom alignment */
+.footer-bottom-content {
+  gap: var(--space-lg);
+}
+
+.footer-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
 }
 
 .highlight-blue {
@@ -390,7 +450,7 @@
 }
 
 .theme-toggle-btn:focus {
-  outline: 3px solid #1E90FF;
+  outline: 3px solid #003366;
   outline-offset: 3px;
 }
 
@@ -654,7 +714,7 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .footer {
-    background: #003366 !important;
+    background: #000000 !important;
     color: var(--text-primary);
   }
   
@@ -676,12 +736,12 @@
 /* Focus styles for accessibility */
 .footer-link:focus,
 .social-link:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 .logo-item:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }

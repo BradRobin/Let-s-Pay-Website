@@ -49,9 +49,11 @@ const Experience = () => {
       <div className="container">
         <div className="experience-header">
           <h1>Our Experience</h1>
-          <p className="experience-subtitle">
-            Over a decade of expertise across multiple domains and industries
-          </p>
+          <div className="info-block">
+            <p className="experience-subtitle">
+              Over a decade of expertise across multiple domains and industries
+            </p>
+          </div>
         </div>
 
         <div className="experience-content">

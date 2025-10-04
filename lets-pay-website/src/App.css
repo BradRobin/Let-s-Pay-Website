@@ -1,3 +1,6 @@
+/* Import Global Spacing System */
+@import './styles/spacing.css';
+
 /* Global App Styles - Enhanced with Modern Design */
 .App {
   min-height: 100vh;
@@ -8,18 +11,9 @@
   transition: background 0.3s ease;
 }
 
-/* Animated background elements */
+/* Remove animated background elements for consistent white background */
 .App::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 80%, rgba(30, 144, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(0, 206, 209, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
+  display: none;
 }
 
 main {
@@ -128,9 +122,10 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, #1E90FF, #87CEEB);
-  color: white;
-  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+  background: #ffffff !important;
+  color: #333333 !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
 }
 
 .btn-primary:hover {
@@ -140,7 +135,7 @@ html {
 }
 
 .btn-primary:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }
 
@@ -151,7 +146,7 @@ html {
 }
 
 .btn-secondary:hover {
-  background: #1E90FF;
+  background: #003366;
   color: white;
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 25px rgba(30, 144, 255, 0.4);
@@ -159,14 +154,14 @@ html {
 }
 
 .btn-secondary:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }
 
 /* Enhanced Section titles with animation */
 .section-title {
-  font-size: 2.5rem;
-  color: var(--text-primary);
+  font-size: 3.2rem;
+  color: var(--text-title);
   text-align: center;
   margin-bottom: 50px;
   position: relative;
@@ -175,18 +170,9 @@ html {
   animation: fadeInUp 0.8s ease 0.3s forwards;
 }
 
+/* Removed underline pseudo-element */
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(45deg, #1E90FF, #87CEEB);
-  border-radius: 2px;
-  opacity: 0;
-  animation: slideIn 0.6s ease 0.6s forwards;
+  display: none;
 }
 
 /* Enhanced Card styles with glassmorphism */
@@ -461,7 +447,7 @@ html {
 
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }
 
@@ -470,7 +456,7 @@ input:focus,
 select:focus,
 textarea:focus,
 a:focus {
-  outline: 2px solid #1E90FF;
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }
 
@@ -479,7 +465,7 @@ a:focus {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #1E90FF;
+  background: #003366;
   color: white;
   padding: 8px;
   text-decoration: none;
@@ -657,12 +643,22 @@ a:focus {
 }
 
 /* Force all sections to have white background */
-* {
+html, body, .App, main, section, div, article, aside, nav, header, footer {
   background: #ffffff !important;
 }
 
-/* Allow specific elements to override if needed */
-body, .App, main, section, div, article, aside, nav, header, footer {
+/* Ensure all page containers have white background */
+.page, .home, .about, .clients, .experience, .contact, .whyus, .hmis, .countygovernment {
+  background: #ffffff !important;
+}
+
+/* Force all flow sections to have white background */
+.flow-section {
+  background: #ffffff !important;
+}
+
+/* Ensure all containers have white background */
+.container, .flow-container, .content-container {
   background: #ffffff !important;
 }
 
@@ -708,50 +704,53 @@ body, .App, main, section, div, article, aside, nav, header, footer {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
 
-[data-theme="dark"] .placeholder-image {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 40, 0.9)) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+/* Force transparent backgrounds for all image containers */
+.placeholder-image,
+.image-content,
+.image-display {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
-/* Dark overlay for image containers */
-[data-theme="dark"] .image-content {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border-radius: 15px;
-  padding: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+[data-theme="dark"] .placeholder-image,
+[data-theme="dark"] .image-content,
 [data-theme="dark"] .image-display {
-  background: rgba(0, 0, 0, 0.6) !important;
-  border-radius: 15px;
-  padding: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
-/* Force dark backgrounds on all image elements */
-[data-theme="dark"] img[src*=".png"],
-[data-theme="dark"] img[src*=".jpg"],
-[data-theme="dark"] img[src*=".jpeg"],
-[data-theme="dark"] img[src*=".gif"],
-[data-theme="dark"] img[src*=".svg"] {
-  background: rgba(0, 0, 0, 0.9) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 10px;
-  padding: 8px;
+/* Force transparent backgrounds for all image elements */
+img[src*=".png"],
+img[src*=".jpg"],
+img[src*=".jpeg"],
+img[src*=".gif"],
+img[src*=".svg"] {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
-/* Override any white backgrounds on images */
-[data-theme="dark"] img {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+/* Override any backgrounds on images */
+img {
+  background-color: transparent !important;
   background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Specific targeting for images with white backgrounds */
-[data-theme="dark"] img[style*="background"],
-[data-theme="dark"] img[style*="background-color"],
-[data-theme="dark"] img[style*="background-image"] {
-  background: rgba(0, 0, 0, 0.9) !important;
-  background-color: rgba(0, 0, 0, 0.9) !important;
+/* Specific targeting for images with backgrounds */
+img[style*="background"],
+img[style*="background-color"],
+img[style*="background-image"] {
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
+  border: none !important;
 }

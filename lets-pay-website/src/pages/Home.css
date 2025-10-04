@@ -8,7 +8,7 @@
 body {
   font-family: 'SF Pro Text', 'SF Pro Display', 'Roboto', 'Inter', 'Orbitron', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
-  color: #0a2a6c;
+  color: var(--text-primary);
   background: #ffffff;
   overflow-x: hidden;
 }
@@ -19,6 +19,56 @@ body {
   background: #ffffff;
 }
 
+/* Clean Rectangular Paragraph Layout */
+.info-block {
+  max-width: 760px;
+  width: 100%;
+  padding: var(--space-2xl);
+  margin: 0 auto var(--space-xl) auto;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.info-block p {
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: var(--space-md);
+  color: #333333 !important;
+}
+
+.info-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-block {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 10px;
+  }
+  
+  .info-block p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-block {
+    padding: 12px;
+    margin: 0 5px;
+  }
+  
+  .info-block p {
+    font-size: 0.9rem;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -26,9 +76,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #f7ce3e 0%, #87CEEB 48%, #0a2a6c 100%);
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background: #ffffff !important;
   overflow: hidden;
 }
 
@@ -41,6 +89,7 @@ body {
   bottom: 0;
   background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 50%),
               radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+  -webkit-backdrop-filter: blur(0.5px);
   backdrop-filter: blur(0.5px);
   z-index: 1;
 }
@@ -386,37 +435,20 @@ body {
   overflow: hidden;
 }
 
-/* Alternating section colors */
-.flow-section:nth-child(2) {
-  background: #ffffff !important; /* Why Let'spay - White */
+/* All sections have consistent white background */
+.flow-section {
+  background: #ffffff !important;
 }
 
-.flow-section:nth-child(3) {
-  background: #E6F3FF !important; /* Holistic Platform - Sky Blue */
-}
-
-.flow-section:nth-child(4) {
-  background: #ffffff !important; /* Our Experience - White */
-}
-
-.flow-section:nth-child(5) {
-  background: #E6F3FF !important; /* Technology Features - Sky Blue */
-}
-
-.flow-section:nth-child(6) {
-  background: #ffffff !important; /* ERP Solutions - White */
-}
-
-.flow-section:nth-child(7) {
-  background: #E6F3FF !important; /* Industry Solutions - Sky Blue */
-}
-
-.flow-section:nth-child(8) {
-  background: #ffffff !important; /* Client Success - White */
-}
-
+.flow-section:nth-child(2),
+.flow-section:nth-child(3),
+.flow-section:nth-child(4),
+.flow-section:nth-child(5),
+.flow-section:nth-child(6),
+.flow-section:nth-child(7),
+.flow-section:nth-child(8),
 .flow-section:nth-child(9) {
-  background: #E6F3FF !important; /* Contact - Sky Blue */
+  background: #ffffff !important;
 }
 
 .flow-container {
@@ -436,12 +468,9 @@ body {
   border-radius: 0 !important;
 }
 
-/* Remove white background from flow containers in sky blue sections */
-.flow-section:nth-child(3) .flow-container,
-.flow-section:nth-child(5) .flow-container,
-.flow-section:nth-child(7) .flow-container,
-.flow-section:nth-child(9) .flow-container {
-  background: transparent !important;
+/* All flow containers have consistent white background */
+.flow-section .flow-container {
+  background: #ffffff !important;
   border: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -466,10 +495,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: var(--space-lg) 0;
   width: 100%;
   max-width: 600px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto var(--space-2xl) auto;
   text-align: center;
   background: transparent !important;
   border: none !important;
@@ -478,7 +507,7 @@ body {
 }
 
 .text-content {
-  padding: 0;
+  padding: var(--space-lg) 0;
   width: 100%;
   max-width: 700px;
   text-align: center;
@@ -489,15 +518,9 @@ body {
   border-radius: 0 !important;
 }
 
-/* Remove white backgrounds from elements in sky blue sections */
-.flow-section:nth-child(3) .section-title,
-.flow-section:nth-child(3) .image-content,
-.flow-section:nth-child(5) .section-title,
-.flow-section:nth-child(5) .image-content,
-.flow-section:nth-child(7) .section-title,
-.flow-section:nth-child(7) .image-content,
-.flow-section:nth-child(9) .section-title,
-.flow-section:nth-child(9) .image-content {
+/* All section titles and image content have consistent transparent background */
+.flow-section .section-title,
+.flow-section .image-content {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -505,19 +528,134 @@ body {
   padding: 0 !important;
 }
 
-/* Style text-content divs in sky blue sections with consistent styling */
-.flow-section:nth-child(3) .text-content,
-.flow-section:nth-child(5) .text-content,
-.flow-section:nth-child(7) .text-content,
-.flow-section:nth-child(9) .text-content {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(30, 144, 255, 0.2) !important;
-  box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15) !important;
-  border-radius: 20px !important;
-  padding: 40px 30px !important;
+/* All text-content divs have transparent background */
+.flow-section .text-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
   margin: 20px 0 !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Horizontal Flowing Lists Container */
+.why-letspay-features,
+.platform-features,
+.experience-stats,
+.tech-stack,
+.industry-grid {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 30px 0;
+  white-space: nowrap;
+}
+
+/* Inner scrolling container */
+.why-letspay-features .scrolling-container,
+.platform-features .scrolling-container,
+.experience-stats .scrolling-container,
+.tech-stack .scrolling-container,
+.industry-grid .scrolling-container {
+  display: inline-flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  width: 200%; /* Double width for seamless loop */
+}
+
+/* Pause animation on hover */
+.why-letspay-features:hover .scrolling-container,
+.platform-features:hover .scrolling-container,
+.experience-stats:hover .scrolling-container,
+.tech-stack:hover .scrolling-container,
+.industry-grid:hover .scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Blur effect on edges */
+.why-letspay-features::before,
+.why-letspay-features::after,
+.platform-features::before,
+.platform-features::after,
+.experience-stats::before,
+.experience-stats::after,
+.tech-stack::before,
+.tech-stack::after,
+.industry-grid::before,
+.industry-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.why-letspay-features::before,
+.platform-features::before,
+.experience-stats::before,
+.tech-stack::before,
+.industry-grid::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.why-letspay-features::after,
+.platform-features::after,
+.experience-stats::after,
+.tech-stack::after,
+.industry-grid::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Individual items in flowing lists */
+.why-letspay-features .feature-item,
+.platform-features .feature-item,
+.experience-stats .stat-item,
+.tech-stack .tech-item,
+.industry-grid .industry-item {
+  display: inline-block;
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: transparent !important;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Enhanced hover effects with pop-up animation */
+.why-letspay-features .feature-item:hover,
+.platform-features .feature-item:hover,
+.experience-stats .stat-item:hover,
+.tech-stack .tech-item:hover,
+.industry-grid .industry-item:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  position: relative;
+}
+
+/* Smooth transition for all items */
+.why-letspay-features .feature-item,
+.platform-features .feature-item,
+.experience-stats .stat-item,
+.tech-stack .tech-item,
+.industry-grid .industry-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animation for flowing effect - right to left infinite loop */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Image Display Styles */
@@ -578,7 +716,7 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #1E90FF;
+  color: #003366;
   text-align: center;
 }
 
@@ -591,7 +729,7 @@ body {
 
 /* Info Toggle Button */
 .info-toggle-btn {
-  background: linear-gradient(135deg, #1E90FF, #4169E1);
+  background: linear-gradient(135deg, #003366, #4169E1);
   color: white;
   border: none;
   border-radius: 25px;
@@ -644,6 +782,7 @@ body {
   justify-content: center;
   z-index: 1000;
   padding: 20px;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
@@ -686,7 +825,7 @@ body {
 .popup-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -710,7 +849,7 @@ body {
 }
 
 .popup-learn-more-btn {
-  background: linear-gradient(135deg, #1E90FF, #4169E1);
+  background: linear-gradient(135deg, #003366, #4169E1);
   color: white;
   text-decoration: none;
   padding: 12px 30px;
@@ -742,7 +881,7 @@ body {
 .contact-text {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #0a2a6c;
+  color: #333333 !important;
   margin: 0 auto 25px auto;
   text-align: center;
   max-width: 100%;
@@ -756,7 +895,7 @@ body {
 .why-letspay-intro {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 20px;
 }
 
@@ -796,7 +935,7 @@ body {
 .feature-item h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 10px;
 }
 
@@ -845,7 +984,7 @@ body {
 .stat-item h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 10px;
 }
 
@@ -882,7 +1021,7 @@ body {
 .tech-item h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 10px;
 }
 
@@ -919,7 +1058,7 @@ body {
 .module-item h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 10px;
 }
 
@@ -956,7 +1095,7 @@ body {
 .industry-item h4 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #1E90FF;
+  color: #003366;
   margin-bottom: 8px;
 }
 
@@ -1027,11 +1166,11 @@ body {
 
 /* Brand Name Styling */
 .brand-name {
-  color: #1E90FF;
+  color: #003366;
 }
 
 .brand-let {
-  color: #1E90FF;
+  color: #003366;
 }
 
 .brand-apostrophe {
@@ -1039,7 +1178,7 @@ body {
 }
 
 .brand-s {
-  color: #1E90FF;
+  color: #003366;
 }
 
 .brand-pay {
@@ -1310,11 +1449,8 @@ body {
     margin: 0 auto 20px auto;
   }
   
-  /* Responsive adjustments for text-content in sky blue sections */
-  .flow-section:nth-child(3) .text-content,
-  .flow-section:nth-child(5) .text-content,
-  .flow-section:nth-child(7) .text-content,
-  .flow-section:nth-child(9) .text-content {
+  /* Responsive adjustments for text-content */
+  .flow-section .text-content {
     padding: 25px 20px !important;
     margin: 15px 0 !important;
     border-radius: 15px !important;
@@ -1361,11 +1497,8 @@ body {
     font-size: 2.2rem;
   }
   
-  /* Mobile adjustments for text-content in sky blue sections */
-  .flow-section:nth-child(3) .text-content,
-  .flow-section:nth-child(5) .text-content,
-  .flow-section:nth-child(7) .text-content,
-  .flow-section:nth-child(9) .text-content {
+  /* Mobile adjustments for text-content */
+  .flow-section .text-content {
     padding: 20px 15px !important;
     margin: 10px 0 !important;
     border-radius: 12px !important;
@@ -1489,4 +1622,78 @@ body {
   box-shadow: none !important;
   padding: 0 !important;
   margin: 0 auto !important;
+}
+
+/* Responsive styles for horizontal flowing lists */
+@media (max-width: 768px) {
+  .why-letspay-features .scrolling-container,
+  .platform-features .scrolling-container,
+  .experience-stats .scrolling-container,
+  .tech-stack .scrolling-container,
+  .industry-grid .scrolling-container {
+    gap: 20px;
+    animation-duration: 25s;
+  }
+  
+  .why-letspay-features,
+  .platform-features,
+  .experience-stats,
+  .tech-stack,
+  .industry-grid {
+    padding: 15px 0;
+  }
+  
+  .why-letspay-features .feature-item,
+  .platform-features .feature-item,
+  .experience-stats .stat-item,
+  .tech-stack .tech-item,
+  .industry-grid .industry-item {
+    flex: 0 0 250px;
+    min-width: 250px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-letspay-features .scrolling-container,
+  .platform-features .scrolling-container,
+  .experience-stats .scrolling-container,
+  .tech-stack .scrolling-container,
+  .industry-grid .scrolling-container {
+    gap: 15px;
+    animation-duration: 20s;
+  }
+  
+  .why-letspay-features,
+  .platform-features,
+  .experience-stats,
+  .tech-stack,
+  .industry-grid {
+    padding: 10px 0;
+  }
+  
+  .why-letspay-features .feature-item,
+  .platform-features .feature-item,
+  .experience-stats .stat-item,
+  .tech-stack .tech-item,
+  .industry-grid .industry-item {
+    flex: 0 0 220px;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  /* Reduce blur width on mobile */
+  .why-letspay-features::before,
+  .why-letspay-features::after,
+  .platform-features::before,
+  .platform-features::after,
+  .experience-stats::before,
+  .experience-stats::after,
+  .tech-stack::before,
+  .tech-stack::after,
+  .industry-grid::before,
+  .industry-grid::after {
+    width: 30px;
+  }
 }

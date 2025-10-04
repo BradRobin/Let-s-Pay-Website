@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
 import { Link } from 'react-router-dom';
+import LearnMoreButton from '../components/LearnMoreButton';
 import './Home.css';
 
 // Animated counter that starts when scrolled into view
@@ -66,30 +67,16 @@ const AnimatedCounter = ({ to, duration = 1800 }) => {
 };
 
 const Home = () => {
-  const [tickAnimation, setTickAnimation] = useState(null);
   const [passwordAnimation, setPasswordAnimation] = useState(null);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     // Load animations dynamically from public directory
-    fetch('/animations/Tick Animation.json')
-      .then(response => response.json())
-      .then(data => setTickAnimation(data))
-      .catch(error => console.error('Error loading tick animation:', error));
-
     fetch('/animations/Password Authentication.json')
       .then(response => response.json())
       .then(data => setPasswordAnimation(data))
       .catch(error => console.error('Error loading password animation:', error));
   }, []);
 
-  const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
 
   return (
     <div className="home">
@@ -147,10 +134,12 @@ const Home = () => {
                 )}
               </div>
                           <h2>Secure. Seamless Technology.</h2>
-              <button className="info-toggle-btn" onClick={togglePopup}>
-                <span className="toggle-text">Learn More</span>
-                <span className="toggle-icon">▼</span>
-              </button>
+              <LearnMoreButton
+                title="Why Let's Pay"
+                description="Let'sPay is a Web & Mobility based platform, targeted towards facilitating Government Departments to collect and manage revenue payments more seamlessly & conveniently. This is a holistic platform, which facilitate the collection of payments using Cash, Debit and credit Cards & Mobile Wallets and direct bank deposit from consumers and also supports other ERP modules like Human Resource Management, Electronic Document Management, Case Management, Fleet Management, Licenses, Property & Land Rates. It's a real time system, with secure audit trials, automatic reports and self reconciling without human intervention. It is the most secure and customized system in Kenya."
+                ctaText="Discover More"
+                ctaLink="/why-us"
+              />
             </div>
           </div>
           <div className="text-content">
@@ -158,23 +147,40 @@ const Home = () => {
               <p className="why-letspay-intro">
                 <span className="highlight-cyan">1000+ man-years of experience</span> across payment and enterprise domains
               </p>
-              <p className="why-letspay-text">
-                A pool of human minds with deep-rooted knowledge across multiple industry verticals. 
-                Work with you end-to-end. Stay till the end to ensure you get the objectives fulfilled. 
-                Hands-on approach. Secure Robust Platform. The platform is already used in Banks for Payment.
-              </p>
+              <div className="info-block">
+                <p className="why-letspay-text">
+                  A pool of human minds with deep-rooted knowledge across multiple industry verticals. 
+                  Work with you end-to-end. Stay till the end to ensure you get the objectives fulfilled. 
+                  Hands-on approach. Secure Robust Platform. The platform is already used in Banks for Payment.
+                </p>
+              </div>
               <div className="why-letspay-features">
-                <div className="feature-item">
-                  <h4>Proven Track Record</h4>
-                  <p>Successfully implemented solutions across multiple industries</p>
-                </div>
-                <div className="feature-item">
-                  <h4>End-to-End Support</h4>
-                  <p>Complete implementation and ongoing maintenance</p>
-                </div>
-                <div className="feature-item">
-                  <h4>Bank-Grade Security</h4>
-                  <p>Platform already trusted by financial institutions</p>
+                <div className="scrolling-container">
+                  <div className="feature-item">
+                    <h4>Proven Track Record</h4>
+                    <p>Successfully implemented solutions across multiple industries</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>End-to-End Support</h4>
+                    <p>Complete implementation and ongoing maintenance</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Bank-Grade Security</h4>
+                    <p>Platform already trusted by financial institutions</p>
+                  </div>
+                  {/* Duplicate for seamless loop */}
+                  <div className="feature-item">
+                    <h4>Proven Track Record</h4>
+                    <p>Successfully implemented solutions across multiple industries</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>End-to-End Support</h4>
+                    <p>Complete implementation and ongoing maintenance</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Bank-Grade Security</h4>
+                    <p>Platform already trusted by financial institutions</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,28 +188,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Popup Modal */}
-      {isPopupOpen && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={closePopup}>×</button>
-            <h3 className="popup-title">About Let'sPay Platform</h3>
-            <div className="popup-body">
-              <p>
-                Let'sPay is a Web & Mobility based platform, targeted towards facilitating Government Departments to collect and manage revenue payments more seamlessly & conveniently. This is a holistic platform, which facilitate the collection of payments using Cash, Debit and credit Cards & Mobile Wallets and direct bank deposit from consumers and also supports other ERP modules like Human Resource Management, Electronic Document Management, Case Management, Fleet Management, Licenses, Property & Land Rates.
-              </p>
-              <p>
-                Let'sPay is a real time system, with secure audit trials, automatic reports and self reconciling without human intervention. It is the most secure and customized system in Kenya. It is a tier one banking core system currently used by banks, financial institutions, insurances, governments across all the continents of the world. It has been used in Kenya with great success.
-              </p>
-            </div>
-            <div className="popup-footer">
-              <Link to="/why-us" className="popup-learn-more-btn" onClick={closePopup}>
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Third Section - Holistic Platform - Top Down Layout */}
       <section className="flow-section platform-section reveal">
@@ -220,23 +204,40 @@ const Home = () => {
           </div>
           <div className="text-content">
             <div className="platform-content">
-              <p className="intro-text">
-                A comprehensive solution that integrates all aspects of financial management into a single, 
-                unified platform designed for modern enterprises.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  A comprehensive solution that integrates all aspects of financial management into a single, 
+                  unified platform designed for modern enterprises.
+                </p>
+              </div>
               <div className="platform-features">
-                <div className="feature-item">
-                  <h4>Integrated Architecture</h4>
-                  <p>Seamless integration across all financial modules</p>
+                <div className="scrolling-container">
+                  <div className="feature-item">
+                    <h4>Integrated Architecture</h4>
+                    <p>Seamless integration across all financial modules</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Real-time Processing</h4>
+                    <p>Instant transaction processing and reporting</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Scalable Solutions</h4>
+                    <p>Built to grow with your business needs</p>
+                  </div>
+                  {/* Duplicate for seamless loop */}
+                  <div className="feature-item">
+                    <h4>Integrated Architecture</h4>
+                    <p>Seamless integration across all financial modules</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Real-time Processing</h4>
+                    <p>Instant transaction processing and reporting</p>
+                  </div>
+                  <div className="feature-item">
+                    <h4>Scalable Solutions</h4>
+                    <p>Built to grow with your business needs</p>
+                  </div>
                 </div>
-                <div className="feature-item">
-                  <h4>Real-time Processing</h4>
-                  <p>Instant transaction processing and reporting</p>
-                </div>
-                <div className="feature-item">
-                  <h4>Scalable Solutions</h4>
-                  <p>Built to grow with your business needs</p>
-        </div>
               </div>
             </div>
           </div>
@@ -258,24 +259,41 @@ const Home = () => {
           </div>
           <div className="text-content">
             <div className="experience-content">
-              <p className="intro-text">
-                Decades of combined experience in financial technology, enterprise solutions, 
-                and payment processing across diverse industry verticals.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  Decades of combined experience in financial technology, enterprise solutions, 
+                  and payment processing across diverse industry verticals.
+                </p>
+              </div>
             <div className="experience-stats">
-              <div className="stat-item">
-                  <h3><AnimatedCounter to={935} duration={1800} /></h3>
-                  <p>Letspay’s team brings together over 935 years of combined experience—earned across government, enterprise, and fintech innovation.</p>
-              </div>
-              <div className="stat-item">
-                  <h3><AnimatedCounter to={50} duration={1400} />+</h3>
-                  <p>Successful implementations</p>
-              </div>
+              <div className="scrolling-container">
                 <div className="stat-item">
-                  <h3><AnimatedCounter to={15} duration={1200} />+</h3>
-                  <p>Years in the industry</p>
-            </div>
+                    <h3><AnimatedCounter to={935} duration={1800} /></h3>
+                    <p>Letspay's team brings together over 935 years of combined experience—earned across government, enterprise, and fintech innovation.</p>
+                </div>
+                <div className="stat-item">
+                    <h3><AnimatedCounter to={50} duration={1400} />+</h3>
+                    <p>Successful implementations</p>
+                </div>
+                <div className="stat-item">
+                    <h3><AnimatedCounter to={15} duration={1200} />+</h3>
+                    <p>Years in the industry</p>
+                </div>
+                {/* Duplicate for seamless loop */}
+                <div className="stat-item">
+                    <h3><AnimatedCounter to={935} duration={1800} /></h3>
+                    <p>Letspay's team brings together over 935 years of combined experience—earned across government, enterprise, and fintech innovation.</p>
+                </div>
+                <div className="stat-item">
+                    <h3><AnimatedCounter to={50} duration={1400} />+</h3>
+                    <p>Successful implementations</p>
+                </div>
+                <div className="stat-item">
+                    <h3><AnimatedCounter to={15} duration={1200} />+</h3>
+                    <p>Years in the industry</p>
+                </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -287,31 +305,58 @@ const Home = () => {
           <h2 className="section-title">Technology Features</h2>
             <div className="image-content">
               <div className="image-display">
-                <img 
-                src="/images/smart devices.png" 
-                alt="Technology Features" 
-                  className="section-image"
-                />
+              <img 
+                src="/images/technology for better life.png" 
+                alt="Let's Pay Technology for Better Life - Computing Infrastructure with Circuit-Style Graphics, Digital Empowerment, Community Engagement, Integrations, Business Intelligence, Cloud Computing, and Telemedicine for Government Modernization and Digital Transformation" 
+                className="section-image"
+              />
               </div>
             </div>
             <div className="text-content">
             <div className="technology-content">
-              <p className="intro-text">
-                Cutting-edge technology stack built on modern frameworks and best practices 
-                to deliver robust, scalable, and secure financial solutions.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  We are passionate about the technology that is driving the modern world. We develop solutions using cutting-edge technologies and offer excellent service. 
+                  Technology for better life - our computing infrastructure with circuit-style graphics enables digital empowerment and community engagement through 
+                  seamless system integration, data-driven decision-making, scalable cloud infrastructure, and remote healthcare access for government modernization, 
+                  enterprise digital transformation, and health tech partnerships.
+                </p>
+              </div>
               <div className="tech-stack">
-                <div className="tech-item">
-                  <h4>Modern Frameworks</h4>
-                  <p>React, Node.js, and cloud-native architecture</p>
-                </div>
-                <div className="tech-item">
-                  <h4>Security First</h4>
-                  <p>Bank-grade encryption and security protocols</p>
-                </div>
-                <div className="tech-item">
-                  <h4>API Integration</h4>
-                  <p>Seamless integration with existing systems</p>
+                <div className="scrolling-container">
+                  <div className="tech-item">
+                    <h4>Integrations</h4>
+                    <p>Seamless system integration with flowchart and circuit board connectivity</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Business Intelligence</h4>
+                    <p>Data-driven decision-making with smart analytics and network diagrams</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Cloud Computing</h4>
+                    <p>Scalable cloud infrastructure with flexible and scalable cloud-based solutions</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Telemedicine</h4>
+                    <p>Remote healthcare access with digital health solutions and telemonitoring</p>
+                  </div>
+                  {/* Duplicate for seamless loop */}
+                  <div className="tech-item">
+                    <h4>Integrations</h4>
+                    <p>Seamless system integration with flowchart and circuit board connectivity</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Business Intelligence</h4>
+                    <p>Data-driven decision-making with smart analytics and network diagrams</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Cloud Computing</h4>
+                    <p>Scalable cloud infrastructure with flexible and scalable cloud-based solutions</p>
+                  </div>
+                  <div className="tech-item">
+                    <h4>Telemedicine</h4>
+                    <p>Remote healthcare access with digital health solutions and telemonitoring</p>
+                  </div>
                 </div>
             </div>
             </div>
@@ -334,10 +379,12 @@ const Home = () => {
           </div>
           <div className="text-content">
             <div className="erp-content">
-              <p className="intro-text">
-                Comprehensive Enterprise Resource Planning solutions that streamline operations, 
-                improve efficiency, and provide real-time insights into your business performance.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  Comprehensive Enterprise Resource Planning solutions that streamline operations, 
+                  improve efficiency, and provide real-time insights into your business performance.
+                </p>
+              </div>
               <div className="erp-modules">
                 <div className="module-item">
                   <h4>Financial Management</h4>
@@ -372,26 +419,47 @@ const Home = () => {
           </div>
           <div className="text-content">
             <div className="industry-content">
-              <p className="intro-text">
-                Specialized solutions tailored to meet the unique requirements of different industries, 
-                from healthcare to government, retail to manufacturing.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  Specialized solutions tailored to meet the unique requirements of different industries, 
+                  from healthcare to government, retail to manufacturing.
+                </p>
+              </div>
               <div className="industry-grid">
-                <div className="industry-item">
-                  <h4>Health Management Solution</h4>
-                  <p>End to end management and billing system</p>
-                </div>
-                <div className="industry-item">
-                  <h4>Government</h4>
-                  <p>Citizen services and revenue management</p>
-                </div>
-                <div className="industry-item">
-                  <h4>Retail</h4>
-                  <p>Secure Management Platform</p>
-                </div>
-                <div className="industry-item">
-                  <h4>Manufacturing</h4>
-                  <p>Production planning and quality control</p>
+                <div className="scrolling-container">
+                  <div className="industry-item">
+                    <h4>Health Management Solution</h4>
+                    <p>End to end management and billing system</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Government</h4>
+                    <p>Citizen services and revenue management</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Retail</h4>
+                    <p>Secure Management Platform</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Manufacturing</h4>
+                    <p>Production planning and quality control</p>
+                  </div>
+                  {/* Duplicate for seamless loop */}
+                  <div className="industry-item">
+                    <h4>Health Management Solution</h4>
+                    <p>End to end management and billing system</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Government</h4>
+                    <p>Citizen services and revenue management</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Retail</h4>
+                    <p>Secure Management Platform</p>
+                  </div>
+                  <div className="industry-item">
+                    <h4>Manufacturing</h4>
+                    <p>Production planning and quality control</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -405,48 +473,22 @@ const Home = () => {
           <h2 className="section-title">Client Success</h2>
           <div className="image-content">
             <div className="image-display">
-              {tickAnimation ? (
-                <Lottie 
-                  animationData={tickAnimation}
-                  loop={true}
-                  autoplay={true}
-                  className="lottie-animation"
-                />
-              ) : (
               <img 
                 src="/images/Happy customers.png" 
-                  alt="Client Success" 
+                alt="Let's Pay Happy Customers - Institutional Trust and Customer Satisfaction Across Government, Healthcare, and Educational Organizations Including Ministry of Youth Sports Arts Recreation Zimbabwe, Amref Health Africa, Evans Sunrise Medical Centre" 
                 className="section-image"
               />
-              )}
             </div>
           </div>
           <div className="text-content">
             <div className="clients-content">
-              <p className="intro-text">
-                Trusted by organizations worldwide to deliver innovative solutions that drive growth, 
-                improve efficiency, and enhance customer satisfaction.
-              </p>
-            <div className="client-logos">
-                <div className="logo-item">
-                  <img src="/images/embu county government logo.png" alt="Embu County Government" />
-                </div>
-                <div className="logo-item">
-                  <img src="/images/evans medical centre logo.png" alt="Evans Medical Centre" />
-                </div>
-                <div className="logo-item">
-                  <img src="/images/kenyatta university logo.png" alt="Kenyatta University" />
-                </div>
-                <div className="logo-item">
-                  <img src="/images/kiambu county government logo.png" alt="Kiambu County Government" />
-                </div>
-                <div className="logo-item">
-                  <img src="/images/narok county government logo.png" alt="Narok County Government" />
-                </div>
-                <div className="logo-item">
-                  <img src="/images/who logo.png" alt="WHO" />
-                </div>
-                </div>
+              <div className="info-block">
+                <p className="intro-text">
+                  Trusted by organizations worldwide including government ministries, healthcare institutions, 
+                  and educational organizations to deliver innovative solutions that drive growth, improve 
+                  efficiency, and enhance customer satisfaction across diverse sectors.
+                </p>
+              </div>
                 </div>
                 </div>
                 </div>
@@ -459,18 +501,22 @@ const Home = () => {
           <div className="image-content">
             <div className="image-display">
               <img 
-                src="/images/let's pay overview.png" 
-                alt="Get Started Today" 
+                src="/images/Partners.png" 
+                alt="Let's Pay Technology and Security Partners Network - HUAWEI, ZTE, SENTER, Lanner Telecommunications & Networking, FORTINET, HIKVISION, PERSIST SECURITY Cybersecurity & Surveillance, 19 Labs, Peninlog Healthcare & Tech Innovation, handheld, INFINIDAT Rugged Devices & Data Infrastructure" 
                 className="section-image"
-                  />
+              />
                 </div>
                 </div>
           <div className="text-content">
             <div className="contact-content">
-              <p className="intro-text">
-                Ready to transform your business with our innovative solutions? 
-                Contact us today to discuss your requirements and discover how we can help you achieve your goals.
-              </p>
+              <div className="info-block">
+                <p className="intro-text">
+                  Ready to transform your business with our innovative solutions backed by industry-leading technology partners?
+                  Our robust network of technology and security partners including HUAWEI, ZTE, FORTINET, HIKVISION, and others 
+                  ensures interoperability with global tech standards, security-first architecture, and smart partnerships 
+                  for healthcare, finance, and infrastructure sectors.
+                </p>
+              </div>
               <div className="contact-actions">
                 <button className="cta-button primary">
                   <span className="cta-text">Schedule a Demo</span>

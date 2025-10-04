@@ -7,9 +7,11 @@ const WhyUs = () => {
       <div className="container">
         <div className="why-us-header">
           <h1>Why Choose <span className="brand-name"><span className="brand-let">Let</span><span className="brand-apostrophe">'</span><span className="brand-s">s</span><span className="brand-pay">pay</span></span>?</h1>
-          <p className="why-us-subtitle">
-            Experience the difference with our proven track record and innovative solutions
-          </p>
+          <div className="info-block">
+            <p className="why-us-subtitle">
+              Experience the difference with our proven track record and innovative solutions
+            </p>
+          </div>
         </div>
 
         <div className="why-us-content">
