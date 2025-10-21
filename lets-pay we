@@ -200,3 +200,4 @@
 .flow-section:not(:last-child) {
   margin-bottom: var(--space-xl);
 }
+
