@@ -121,7 +121,7 @@ body {
 }
 
 .hero-logo .home-logo-image {
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   background: transparent !important;
   border: none !important;
@@ -134,7 +134,7 @@ body {
 .hero-tagline {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #87CEEB;
+  color: #0a2a6c;
   margin-top: 0.5rem;
   margin-bottom: 0;
   font-style: italic !important;
@@ -217,7 +217,7 @@ body {
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.0;
   margin-bottom: 2rem;
@@ -289,7 +289,7 @@ body {
 }
 
 .hero-description {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   color: red !important;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
   margin-bottom: 2.5rem;
@@ -300,6 +300,9 @@ body {
   border: none;
   box-shadow: none;
   border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hero-cta {
@@ -1456,12 +1459,21 @@ body {
     border-radius: 15px !important;
   }
   
+  .hero-logo .home-logo-image {
+    max-width: 350px;
+  }
+  
   .hero-title {
-    font-size: 3rem;
+    font-size: 1.8rem;
+  }
+  
+  .hero-tagline {
+    font-size: 0.95rem;
   }
   
   .hero-description {
     font-size: 1.2rem;
+    white-space: normal;
   }
   
   .cta-button {
@@ -1504,25 +1516,21 @@ body {
     border-radius: 12px !important;
   }
   
-  .home-logo-image {
-    max-height: 150px;
-  }
-  
-  .lottie-animation {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .placeholder-image {
-    height: 300px;
+  .hero-logo .home-logo-image {
+    max-width: 250px;
+    max-height: none;
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
   }
   
   .hero-description {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
+  }
+  
+  .hero-tagline {
+    font-size: 0.85rem;
   }
   
   .cta-button {
