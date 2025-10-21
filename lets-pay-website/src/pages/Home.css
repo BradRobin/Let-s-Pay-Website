@@ -121,7 +121,7 @@ body {
 }
 
 .hero-logo .home-logo-image {
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
   background: transparent !important;
   border: none !important;
@@ -290,7 +290,7 @@ body {
 
 .hero-description {
   font-size: 1.4rem;
-  color: #0a2a6c;
+  color: red !important;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
   margin-bottom: 2.5rem;
   font-weight: 500;

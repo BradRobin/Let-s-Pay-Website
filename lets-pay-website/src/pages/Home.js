@@ -95,15 +95,15 @@ const Home = () => {
                 alt="Let'spay Official Transparent Logo" 
                 className="home-logo-image"
               />
-              <p className="hero-tagline">Bringing your future today.</p>
+              <p className="hero-tagline">Bringing Your Future Today.</p>
             </div>
             <h1 className="hero-title">
-              <span className="hero-line-1">Secure financial gateways.</span>
-              <span className="hero-line-2"><span className="hero-world-class">World-class</span> technology.</span>
-              <span className="hero-line-3">Mobile apps - Multiple devices.</span>
+              <span className="hero-line-1">Secure Financial Gateways.</span>
+              <span className="hero-line-2"><span className="hero-world-class">World-class</span> Technology.</span>
+              <span className="hero-line-3">Mobile Apps - Multiple Devices.</span>
             </h1>
             <p className="hero-description">
-              Powering transactions across continents with Tier 1 bank co. secure technology and next-gen mobile technology.
+              POWERING TRANSACTIONS ACROSS CONTINENTS WITH NEXT-GEN MOBILE TECHNOLOGY AND TIER 1 BANKING-CORE SECURE TECHNOLOGY!
             </p>
             <div className="hero-cta">
               <Link to="/about" className="cta-button cta-explore" aria-label="Explore">
